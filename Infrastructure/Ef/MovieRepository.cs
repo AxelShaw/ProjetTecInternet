@@ -1,0 +1,53 @@
+﻿using Infrastructure.Ef.DbEntities;
+using Infrastructure.Utils;
+
+namespace Infrastructure.Ef;
+
+public class MovieRepository : IMovieRepository
+{
+    private MovieContextProvider _contextProvider;
+    
+    public MovieRepository(MovieContextProvider contextProvider)
+    {
+        _contextProvider = contextProvider;
+    }
+    
+    
+    public IEnumerable<DbMovie> FetchAll()
+    {
+        using var context = _contextProvider.NewContext();
+        return context.Movie.ToList();
+    }
+
+    public DbMovie FetchById(int id)
+    {
+        using var context = _contextProvider.NewContext();
+        var movie = context.Movie.FirstOrDefault(g => g.IdMovie == id);
+        
+        if (movie == null)
+            throw new KeyNotFoundException($"Movie with id {id} has not been found");
+
+        return movie;
+    }
+
+    public DbMovie Create(string name, int minute, string type, string description, string image, string genre,
+        string director, string release)
+    {
+        using var context = _contextProvider.NewContext();
+        var movie = new DbMovie
+        {
+            NameMovie = name,
+            RuntimeMinute = minute,
+            MovieType = type,
+            DescriptionMovie = description,
+            ImageMovie = image,
+            FilmGenre = genre,
+            Director = director,
+            Release_movie = release
+        };
+        context.Movie.Add(movie);
+        context.SaveChanges();
+        return movie;
+    }
+    
+}
