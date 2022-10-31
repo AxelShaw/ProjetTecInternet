@@ -18,6 +18,19 @@
           }
         }
       },
+      "AutoMapper.Extensions.Microsoft.DependencyInjection/12.0.0": {
+        "type": "package",
+        "dependencies": {
+          "AutoMapper": "12.0.0",
+          "Microsoft.Extensions.Options": "6.0.0"
+        },
+        "compile": {
+          "lib/netstandard2.1/AutoMapper.Extensions.Microsoft.DependencyInjection.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.1/AutoMapper.Extensions.Microsoft.DependencyInjection.dll": {}
+        }
+      },
       "Azure.Core/1.24.0": {
         "type": "package",
         "dependencies": {
@@ -1224,6 +1237,20 @@
         "icon.png",
         "lib/netstandard2.1/AutoMapper.dll",
         "lib/netstandard2.1/AutoMapper.xml"
+      ]
+    },
+    "AutoMapper.Extensions.Microsoft.DependencyInjection/12.0.0": {
+      "sha512": "XCJ4E3oKrbRl1qY9Mr+7uyC0xZj1+bqQjmQRWTiTKiVuuXTny+7YFWHi20tPjwkMukLbicN6yGlDy5PZ4wyi1w==",
+      "type": "package",
+      "path": "automapper.extensions.microsoft.dependencyinjection/12.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "automapper.extensions.microsoft.dependencyinjection.12.0.0.nupkg.sha512",
+        "automapper.extensions.microsoft.dependencyinjection.nuspec",
+        "icon.png",
+        "lib/netstandard2.1/AutoMapper.Extensions.Microsoft.DependencyInjection.dll"
       ]
     },
     "Azure.Core/1.24.0": {
@@ -3593,40 +3620,43 @@
   "projectFileDependencyGroups": {
     "net6.0": [
       "Application >= 1.0.0",
+      "AutoMapper.Extensions.Microsoft.DependencyInjection >= 12.0.0",
       "Infrastructure >= 1.0.0",
       "Swashbuckle.AspNetCore >= 6.2.3"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\shaw\\.nuget\\packages\\": {}
+    "C:\\Users\\lucas\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\shaw\\Desktop\\Projet ti\\Rider\\ProjetTi\\Api\\Api.csproj",
+      "projectUniqueName": "D:\\Ecole\\Bloc3\\ti4_sql\\projet\\projet_github\\ProjetTecInternetRider\\Api\\Api.csproj",
       "projectName": "Api",
-      "projectPath": "C:\\Users\\shaw\\Desktop\\Projet ti\\Rider\\ProjetTi\\Api\\Api.csproj",
-      "packagesPath": "C:\\Users\\shaw\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\shaw\\Desktop\\Projet ti\\Rider\\ProjetTi\\Api\\obj\\",
+      "projectPath": "D:\\Ecole\\Bloc3\\ti4_sql\\projet\\projet_github\\ProjetTecInternetRider\\Api\\Api.csproj",
+      "packagesPath": "C:\\Users\\lucas\\.nuget\\packages\\",
+      "outputPath": "D:\\Ecole\\Bloc3\\ti4_sql\\projet\\projet_github\\ProjetTecInternetRider\\Api\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\shaw\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\lucas\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net6.0"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\shaw\\Desktop\\Projet ti\\Rider\\ProjetTi\\Application\\Application.csproj": {
-              "projectPath": "C:\\Users\\shaw\\Desktop\\Projet ti\\Rider\\ProjetTi\\Application\\Application.csproj"
+            "D:\\Ecole\\Bloc3\\ti4_sql\\projet\\projet_github\\ProjetTecInternetRider\\Application\\Application.csproj": {
+              "projectPath": "D:\\Ecole\\Bloc3\\ti4_sql\\projet\\projet_github\\ProjetTecInternetRider\\Application\\Application.csproj"
             },
-            "C:\\Users\\shaw\\Desktop\\Projet ti\\Rider\\ProjetTi\\Infrastructure\\Infrastructure.csproj": {
-              "projectPath": "C:\\Users\\shaw\\Desktop\\Projet ti\\Rider\\ProjetTi\\Infrastructure\\Infrastructure.csproj"
+            "D:\\Ecole\\Bloc3\\ti4_sql\\projet\\projet_github\\ProjetTecInternetRider\\Infrastructure\\Infrastructure.csproj": {
+              "projectPath": "D:\\Ecole\\Bloc3\\ti4_sql\\projet\\projet_github\\ProjetTecInternetRider\\Infrastructure\\Infrastructure.csproj"
             }
           }
         }
@@ -3641,6 +3671,10 @@
       "net6.0": {
         "targetAlias": "net6.0",
         "dependencies": {
+          "AutoMapper.Extensions.Microsoft.DependencyInjection": {
+            "target": "Package",
+            "version": "[12.0.0, )"
+          },
           "Swashbuckle.AspNetCore": {
             "target": "Package",
             "version": "[6.2.3, )"

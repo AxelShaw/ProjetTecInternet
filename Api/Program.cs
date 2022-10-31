@@ -12,7 +12,7 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-
+builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 builder.Services.AddScoped<IConnectionStringProvider, ConnectionStringProvider>();
 builder.Services.AddScoped<MovieContextProvider>();
 builder.Services.AddScoped<IMovieRepository, MovieRepository>();
@@ -20,6 +20,7 @@ builder.Services.AddScoped<IMovieRepository, MovieRepository>();
 builder.Services.AddScoped<UseCaseFetchAllMovies>();
 builder.Services.AddScoped<UseCaseCreateMovie>();
 builder.Services.AddScoped<UseCaseFetchMovieById>();
+builder.Services.AddScoped<UseCaseDeleteMovie>();
 
 builder.Services.AddCors(options =>
 {

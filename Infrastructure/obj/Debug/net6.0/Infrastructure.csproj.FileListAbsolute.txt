@@ -13,3 +13,18 @@ C:\Users\shaw\Desktop\Projet ti\Rider\ProjetTi\Infrastructure\obj\Debug\net6.0\I
 C:\Users\shaw\Desktop\Projet ti\Rider\ProjetTi\Infrastructure\obj\Debug\net6.0\refint\Infrastructure.dll
 C:\Users\shaw\Desktop\Projet ti\Rider\ProjetTi\Infrastructure\obj\Debug\net6.0\Infrastructure.pdb
 C:\Users\shaw\Desktop\Projet ti\Rider\ProjetTi\Infrastructure\obj\Debug\net6.0\ref\Infrastructure.dll
+D:\Ecole\Bloc3\ti4_sql\projet\projet_github\ProjetTecInternetRider\Infrastructure\bin\Debug\net6.0\Infrastructure.deps.json
+D:\Ecole\Bloc3\ti4_sql\projet\projet_github\ProjetTecInternetRider\Infrastructure\bin\Debug\net6.0\Infrastructure.dll
+D:\Ecole\Bloc3\ti4_sql\projet\projet_github\ProjetTecInternetRider\Infrastructure\bin\Debug\net6.0\Infrastructure.pdb
+D:\Ecole\Bloc3\ti4_sql\projet\projet_github\ProjetTecInternetRider\Infrastructure\bin\Debug\net6.0\Domain.dll
+D:\Ecole\Bloc3\ti4_sql\projet\projet_github\ProjetTecInternetRider\Infrastructure\bin\Debug\net6.0\Domain.pdb
+D:\Ecole\Bloc3\ti4_sql\projet\projet_github\ProjetTecInternetRider\Infrastructure\obj\Debug\net6.0\Infrastructure.csproj.AssemblyReference.cache
+D:\Ecole\Bloc3\ti4_sql\projet\projet_github\ProjetTecInternetRider\Infrastructure\obj\Debug\net6.0\Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+D:\Ecole\Bloc3\ti4_sql\projet\projet_github\ProjetTecInternetRider\Infrastructure\obj\Debug\net6.0\Infrastructure.AssemblyInfoInputs.cache
+D:\Ecole\Bloc3\ti4_sql\projet\projet_github\ProjetTecInternetRider\Infrastructure\obj\Debug\net6.0\Infrastructure.AssemblyInfo.cs
+D:\Ecole\Bloc3\ti4_sql\projet\projet_github\ProjetTecInternetRider\Infrastructure\obj\Debug\net6.0\Infrastructure.csproj.CoreCompileInputs.cache
+D:\Ecole\Bloc3\ti4_sql\projet\projet_github\ProjetTecInternetRider\Infrastructure\obj\Debug\net6.0\Infrastructure.csproj.CopyComplete
+D:\Ecole\Bloc3\ti4_sql\projet\projet_github\ProjetTecInternetRider\Infrastructure\obj\Debug\net6.0\Infrastructure.dll
+D:\Ecole\Bloc3\ti4_sql\projet\projet_github\ProjetTecInternetRider\Infrastructure\obj\Debug\net6.0\refint\Infrastructure.dll
+D:\Ecole\Bloc3\ti4_sql\projet\projet_github\ProjetTecInternetRider\Infrastructure\obj\Debug\net6.0\Infrastructure.pdb
+D:\Ecole\Bloc3\ti4_sql\projet\projet_github\ProjetTecInternetRider\Infrastructure\obj\Debug\net6.0\ref\Infrastructure.dll

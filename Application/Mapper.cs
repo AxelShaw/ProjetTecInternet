@@ -23,7 +23,8 @@ public class Mapper
             cfg.CreateMap<Movie, DtoOutputMovie>();
             cfg.CreateMap<DbMovie, DtoOutputMovie>();
             cfg.CreateMap<DbMovie, Movie>();
-            
+            cfg.CreateMap<Boolean, DtoOutputMovie>();
+
         });
         return new AutoMapper.Mapper(config);
     }

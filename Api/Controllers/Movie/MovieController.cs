@@ -12,12 +12,14 @@ public class MovieController : ControllerBase
     private readonly UseCaseFetchAllMovies _useCaseFetchAllMovies;
     private readonly UseCaseCreateMovie _useCaseCreateMovie;
     private readonly UseCaseFetchMovieById _useCaseFetchMovieById;
+    private readonly UseCaseDeleteMovie _useCaseDeleteMovie;
 
-    public MovieController(UseCaseFetchAllMovies useCaseFetchAllMovies, UseCaseCreateMovie useCaseCreateMovie, UseCaseFetchMovieById useCaseFetchMovieById)
+    public MovieController(UseCaseFetchAllMovies useCaseFetchAllMovies, UseCaseCreateMovie useCaseCreateMovie, UseCaseFetchMovieById useCaseFetchMovieById,UseCaseDeleteMovie useCaseDeleteMovie)
     {
         _useCaseFetchAllMovies = useCaseFetchAllMovies;
         _useCaseCreateMovie = useCaseCreateMovie;
         _useCaseFetchMovieById = useCaseFetchMovieById;
+        _useCaseDeleteMovie = useCaseDeleteMovie;
     }
     
     [HttpGet]
@@ -36,6 +38,24 @@ public class MovieController : ControllerBase
             new { id = output.IdMovie },
             output
         );
+    }
+    [HttpDelete]
+    [Route("{id:int}")]
+    [ProducesResponseType(StatusCodes.Status200OK)]
+    [ProducesResponseType(StatusCodes.Status404NotFound)]
+    public ActionResult<DtoOutputMovie>  Delete(int id)
+    {
+        try
+        {
+            return _useCaseDeleteMovie.Execute(id);
+        }
+        catch (KeyNotFoundException e)
+        {
+            return NotFound(new
+            {
+                e.Message
+            });
+        }
     }
     
     [HttpGet]

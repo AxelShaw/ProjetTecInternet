@@ -1,5 +1,7 @@
-﻿using Infrastructure.Ef.DbEntities;
+﻿using Domain;
+using Infrastructure.Ef.DbEntities;
 using Infrastructure.Utils;
+using Microsoft.EntityFrameworkCore;
 
 namespace Infrastructure.Ef;
 
@@ -48,6 +50,19 @@ public class MovieRepository : IMovieRepository
         context.Movie.Add(movie);
         context.SaveChanges();
         return movie;
+    }
+    public bool Delete(int id)
+    {
+        using var context = _contextProvider.NewContext();
+        try 
+        {
+            context.Movie.Remove(new DbMovie{IdMovie = id});
+            return context.SaveChanges() == 1;
+        }
+        catch (DbUpdateConcurrencyException e)
+        {
+            return false;
+        }
     }
     
 }
