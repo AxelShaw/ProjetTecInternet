@@ -1,4 +1,5 @@
-﻿using Infrastructure.Ef.DbEntities;
+﻿using Domain;
+using Infrastructure.Ef.DbEntities;
 
 
 namespace Infrastructure.Ef;
@@ -9,6 +10,8 @@ public interface IMovieRepository
     DbMovie FetchById(int id);
     DbMovie Create(string name, int minute, string type, string description, string image, string genre, string director, string release);
     bool Delete(int id);
+    bool Update(DbMovie movie);
+
     
 
 }

@@ -15,4 +15,8 @@
       <ProjectReference Include="..\Infrastructure\Infrastructure.csproj" />
     </ItemGroup>
 
+    <ItemGroup>
+      <Compile Remove="UseCases\Utlis\IUseCaseParameterizedQueryUpdate.cs" />
+    </ItemGroup>
+
 </Project>

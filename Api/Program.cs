@@ -21,6 +21,7 @@ builder.Services.AddScoped<UseCaseFetchAllMovies>();
 builder.Services.AddScoped<UseCaseCreateMovie>();
 builder.Services.AddScoped<UseCaseFetchMovieById>();
 builder.Services.AddScoped<UseCaseDeleteMovie>();
+builder.Services.AddScoped<UseCaseUpdateMovie>();
 
 builder.Services.AddCors(options =>
 {

@@ -8,13 +8,13 @@ namespace Infrastructure.Ef;
 public class MovieRepository : IMovieRepository
 {
     private MovieContextProvider _contextProvider;
-    
+
     public MovieRepository(MovieContextProvider contextProvider)
     {
         _contextProvider = contextProvider;
     }
-    
-    
+
+
     public IEnumerable<DbMovie> FetchAll()
     {
         using var context = _contextProvider.NewContext();
@@ -25,7 +25,7 @@ public class MovieRepository : IMovieRepository
     {
         using var context = _contextProvider.NewContext();
         var movie = context.Movie.FirstOrDefault(g => g.IdMovie == id);
-        
+
         if (movie == null)
             throw new KeyNotFoundException($"Movie with id {id} has not been found");
 
@@ -51,12 +51,13 @@ public class MovieRepository : IMovieRepository
         context.SaveChanges();
         return movie;
     }
+
     public bool Delete(int id)
     {
         using var context = _contextProvider.NewContext();
-        try 
+        try
         {
-            context.Movie.Remove(new DbMovie{IdMovie = id});
+            context.Movie.Remove(new DbMovie { IdMovie = id });
             return context.SaveChanges() == 1;
         }
         catch (DbUpdateConcurrencyException e)
@@ -64,5 +65,20 @@ public class MovieRepository : IMovieRepository
             return false;
         }
     }
-    
+
+    public bool Update(DbMovie movie)
+    {
+        using var context = _contextProvider.NewContext();
+        try
+        {
+            context.Movie.Update(movie);
+            
+            
+            return context.SaveChanges() == 1;
+        }
+        catch (DbUpdateConcurrencyException e)
+        {
+            return false;
+        }
+    }
 }

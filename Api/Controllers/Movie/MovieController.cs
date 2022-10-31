@@ -1,6 +1,7 @@
 ﻿using Application.UseCases;
 using Application.UseCases.Movies;
 using Application.UseCases.Movies.Dtos;
+using Infrastructure.Ef.DbEntities;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Api.Controllers.Movie;
@@ -13,13 +14,15 @@ public class MovieController : ControllerBase
     private readonly UseCaseCreateMovie _useCaseCreateMovie;
     private readonly UseCaseFetchMovieById _useCaseFetchMovieById;
     private readonly UseCaseDeleteMovie _useCaseDeleteMovie;
+    private readonly UseCaseUpdateMovie _useCaseUpdateMovie;
 
-    public MovieController(UseCaseFetchAllMovies useCaseFetchAllMovies, UseCaseCreateMovie useCaseCreateMovie, UseCaseFetchMovieById useCaseFetchMovieById,UseCaseDeleteMovie useCaseDeleteMovie)
+    public MovieController(UseCaseFetchAllMovies useCaseFetchAllMovies, UseCaseCreateMovie useCaseCreateMovie, UseCaseFetchMovieById useCaseFetchMovieById,UseCaseDeleteMovie useCaseDeleteMovie, UseCaseUpdateMovie useCaseUpdateMovie)
     {
         _useCaseFetchAllMovies = useCaseFetchAllMovies;
         _useCaseCreateMovie = useCaseCreateMovie;
         _useCaseFetchMovieById = useCaseFetchMovieById;
         _useCaseDeleteMovie = useCaseDeleteMovie;
+        _useCaseUpdateMovie = useCaseUpdateMovie;
     }
     
     [HttpGet]
@@ -75,6 +78,14 @@ public class MovieController : ControllerBase
                 e.Message
             });
         }
+    }
+    
+    [HttpPut]
+    [ProducesResponseType(StatusCodes.Status204NoContent)]
+    [ProducesResponseType(StatusCodes.Status404NotFound)]
+    public ActionResult Update(DbMovie movie)
+    {
+        return _useCaseUpdateMovie.Execute(movie) ? NoContent() : NotFound();
     }
     
 }

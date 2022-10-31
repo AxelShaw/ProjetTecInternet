@@ -1,6 +1,7 @@
 ﻿using Application.UseCases.Movies.Dtos;
 using Application.UseCases.Utils;
 using Infrastructure.Ef;
+using Infrastructure.Ef.DbEntities;
 
 namespace Application.UseCases;
 
@@ -18,4 +19,5 @@ public class UseCaseFetchMovieById: IUseCaseParameterizedQuery<DtoOutputMovie, i
         var dbUser = _movieRepository.FetchById(id);
         return Mapper.GetInstance().Map<DtoOutputMovie>(dbUser);
     }
+    
 }
