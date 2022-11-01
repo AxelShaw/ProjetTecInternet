@@ -6,7 +6,7 @@ using Infrastructure.Ef.DbEntities;
 
 namespace Application.UseCases;
 
-public class UseCaseUpdateUser : IUseCaseParameterizedQueryUp<DtoOutputUser, User>
+public class UseCaseUpdateUser : IUseCaseParameterizedQueryUpUser<DtoOutputUser, User>
 {
     private readonly IUserRepository _userRepository;
 
@@ -20,4 +20,5 @@ public class UseCaseUpdateUser : IUseCaseParameterizedQueryUp<DtoOutputUser, Use
         var dbUser = _userRepository.Update(user);
         return Mapper.GetInstance().Map<bool>(dbUser);
     }
+    
 }
