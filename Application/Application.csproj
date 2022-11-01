@@ -19,9 +19,4 @@
       <Compile Remove="UseCases\Utlis\IUseCaseParameterizedQueryUpdate.cs" />
     </ItemGroup>
 
-    <ItemGroup>
-      <Folder Include="UseCases\Users\Dtos" />
-      <Folder Include="UseCases\Users\UseCaseUser" />
-    </ItemGroup>
-
 </Project>
