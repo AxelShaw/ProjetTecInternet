@@ -1,4 +1,5 @@
 ﻿using Application.UseCases.Movies.Dtos;
+using Application.UseCases.Users.Dtos;
 using AutoMapper;
 using Domain;
 using Infrastructure.Ef.DbEntities;
@@ -24,6 +25,10 @@ public class Mapper
             cfg.CreateMap<DbMovie, DtoOutputMovie>();
             cfg.CreateMap<DbMovie, Movie>();
             cfg.CreateMap<Boolean, DtoOutputMovie>();
+            cfg.CreateMap<User, DtoOutputUser>();
+            cfg.CreateMap<DbUser, DtoOutputUser>();
+            cfg.CreateMap<DbUser, User>();
+            cfg.CreateMap<Boolean, DtoOutputUser>();
 
         });
         return new AutoMapper.Mapper(config);

@@ -16,12 +16,18 @@ builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 builder.Services.AddScoped<IConnectionStringProvider, ConnectionStringProvider>();
 builder.Services.AddScoped<MovieContextProvider>();
 builder.Services.AddScoped<IMovieRepository, MovieRepository>();
+builder.Services.AddScoped<IUserRepository, UserRepository>();
 
 builder.Services.AddScoped<UseCaseFetchAllMovies>();
+builder.Services.AddScoped<UseCaseFetchAllUsers>();
 builder.Services.AddScoped<UseCaseCreateMovie>();
+builder.Services.AddScoped<UseCaseCreateUser>();
 builder.Services.AddScoped<UseCaseFetchMovieById>();
+builder.Services.AddScoped<UseCaseFetchUserById>();
 builder.Services.AddScoped<UseCaseDeleteMovie>();
+builder.Services.AddScoped<UseCaseDeleteUser>();
 builder.Services.AddScoped<UseCaseUpdateMovie>();
+builder.Services.AddScoped<UseCaseUpdateUser>();
 
 builder.Services.AddCors(options =>
 {

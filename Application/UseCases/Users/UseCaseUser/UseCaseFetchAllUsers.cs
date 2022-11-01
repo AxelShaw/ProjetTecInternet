@@ -7,7 +7,7 @@ namespace Application.UseCases;
 
 public class UseCaseFetchAllUsers : IUseCaseQuery<IEnumerable<DtoOutputUser>>
 {
-    private readonly IMovieRepository _movieRepository;
+    private readonly IUserRepository _userRepository;
 
     public UseCaseFetchAllUsers(IUserRepository userRepository)
     {
