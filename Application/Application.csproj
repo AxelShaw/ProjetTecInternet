@@ -17,6 +17,7 @@
 
     <ItemGroup>
       <Compile Remove="UseCases\Utlis\IUseCaseParameterizedQueryUpdate.cs" />
+      <Compile Remove="UseCases\Series\DtoInputCreateSerie.cs" />
     </ItemGroup>
 
 </Project>

@@ -16,6 +16,7 @@ public class MovieContext : DbContext
     
     public DbSet<DbMovie> Movie { get; set; }
     public DbSet<DbUser> User { get; set; }
+    public DbSet<DbSerie> Serie { get; set; }
 
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
@@ -53,6 +54,19 @@ public class MovieContext : DbContext
             entity.Property(m => m.password).HasColumnName("password");
             entity.Property(m => m.role).HasColumnName("role");
             entity.Property(m => m.profil_picture).HasColumnName("profil_picture");
+        });
+        
+        modelBuilder.Entity<DbSerie>(entity =>
+        {
+            entity.ToTable("SERIE");
+            entity.HasKey(m => m.IdSerie);
+            entity.Property(m => m.IdSerie).HasColumnName("idSerie");
+            entity.Property(m => m.NameSerie).HasColumnName("nameSerie");
+            entity.Property(m => m.SerieType).HasColumnName("seriesType");
+            entity.Property(m => m.DescriptionSerie).HasColumnName("descriptionSerie");
+            entity.Property(m => m.ImageSerie).HasColumnName("imageSeries");
+            entity.Property(m => m.NbSeason).HasColumnName("nbSeason");
+
         });
     }
     

@@ -1,4 +1,5 @@
 ﻿using Application.UseCases.Movies.Dtos;
+using Application.UseCases.Series.Dtos;
 using Application.UseCases.Users.Dtos;
 using AutoMapper;
 using Domain;
@@ -30,7 +31,12 @@ public class Mapper
             cfg.CreateMap<DbUser, DtoOutputUser>();
             cfg.CreateMap<DbUser, User>();
             cfg.CreateMap<Boolean, DtoOutputUser>();
-            cfg.CreateMap<DtoOutputUser, User>();
+            cfg.CreateMap<DtoOutputSerie, Serie>();
+            cfg.CreateMap<Serie, DtoOutputSerie>();
+            cfg.CreateMap<DbSerie, DtoOutputSerie>();
+            cfg.CreateMap<DbSerie, Serie>();
+            cfg.CreateMap<Boolean, DtoOutputSerie>();
+            cfg.CreateMap<DtoOutputSerie, Serie>();
 
         });
         return new AutoMapper.Mapper(config);
