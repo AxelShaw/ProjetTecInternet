@@ -1,5 +1,6 @@
 using Api;
 using Application.UseCases;
+using Application.UseCases.RatingMovies.UseCaseRatingMovie;
 using Application.UseCases.Series.UseCaseSerie;
 using Infrastructure.Ef;
 using Infrastructure.Utils;
@@ -19,22 +20,28 @@ builder.Services.AddScoped<MovieContextProvider>();
 builder.Services.AddScoped<IMovieRepository, MovieRepository>();
 builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddScoped<ISerieRepository, SerieRepository>();
+builder.Services.AddScoped<IRatingMovieRepository, RatingMovieRepository>();
 
 builder.Services.AddScoped<UseCaseFetchAllMovies>();
 builder.Services.AddScoped<UseCaseFetchAllUsers>();
 builder.Services.AddScoped<UseCaseFetchAllSeries>();
+builder.Services.AddScoped<UseCaseFetchAllRatingMovies>();
 builder.Services.AddScoped<UseCaseCreateMovie>();
 builder.Services.AddScoped<UseCaseCreateUser>();
 builder.Services.AddScoped<UseCaseCreateSerie>();
+builder.Services.AddScoped<UseCaseCreateRatingMovie>();
 builder.Services.AddScoped<UseCaseFetchMovieById>();
 builder.Services.AddScoped<UseCaseFetchUserById>();
 builder.Services.AddScoped<UseCaseFetchSerieById>();
+builder.Services.AddScoped<UseCaseFetchRatingMovieById>();
 builder.Services.AddScoped<UseCaseDeleteMovie>();
 builder.Services.AddScoped<UseCaseDeleteUser>();
 builder.Services.AddScoped<UseCaseDeleteSerie>();
+builder.Services.AddScoped<UseCaseDeleteRatingMovie>();
 builder.Services.AddScoped<UseCaseUpdateMovie>();
 builder.Services.AddScoped<UseCaseUpdateUser>();
 builder.Services.AddScoped<UseCaseUpdateSerie>();
+builder.Services.AddScoped<UseCaseUpdateRatingMovie>();
 
 builder.Services.AddCors(options =>
 {

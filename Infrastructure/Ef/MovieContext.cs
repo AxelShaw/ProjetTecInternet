@@ -2,6 +2,7 @@
 using Infrastructure.Ef.DbEntities;
 using Infrastructure.Utils;
 using Microsoft.EntityFrameworkCore;
+using DbRatingMovie = Infrastructure.Ef.DbEntities.DbRatingMovie;
 
 namespace Infrastructure.Ef;
 
@@ -17,6 +18,7 @@ public class MovieContext : DbContext
     public DbSet<DbMovie> Movie { get; set; }
     public DbSet<DbUser> User { get; set; }
     public DbSet<DbSerie> Serie { get; set; }
+    public DbSet<DbRatingMovie> RatingMovie { get; set; }
 
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
@@ -67,6 +69,15 @@ public class MovieContext : DbContext
             entity.Property(m => m.ImageSerie).HasColumnName("imageSeries");
             entity.Property(m => m.NbSeason).HasColumnName("nbSeason");
 
+        });
+        
+        modelBuilder.Entity<DbRatingMovie>(entity =>
+        {
+            entity.ToTable("RATINGMOVIE");
+            entity.HasKey(m => m.MovieRefId);
+            entity.Property(m => m.MovieRefId).HasColumnName("idmovie");
+            entity.Property(m => m.Average_rating).HasColumnName("average_rating");
+            entity.Property(m => m.NumVote).HasColumnName("numVote");
         });
     }
     

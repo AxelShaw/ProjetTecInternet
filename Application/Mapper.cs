@@ -1,4 +1,5 @@
 ﻿using Application.UseCases.Movies.Dtos;
+using Application.UseCases.RatingMovies.Dtos;
 using Application.UseCases.Series.Dtos;
 using Application.UseCases.Users.Dtos;
 using AutoMapper;
@@ -27,6 +28,7 @@ public class Mapper
             cfg.CreateMap<DbMovie, Movie>();
             cfg.CreateMap<Boolean, DtoOutputMovie>();
             cfg.CreateMap<DtoOutputMovie, Movie>();
+            
             cfg.CreateMap<User, DtoOutputUser>();
             cfg.CreateMap<DbUser, DtoOutputUser>();
             cfg.CreateMap<DbUser, User>();
@@ -37,6 +39,12 @@ public class Mapper
             cfg.CreateMap<DbSerie, Serie>();
             cfg.CreateMap<Boolean, DtoOutputSerie>();
             cfg.CreateMap<DtoOutputSerie, Serie>();
+            
+            cfg.CreateMap<RatingMovie, DtoOutputRatingMovie>();
+            cfg.CreateMap<DbRatingMovie, DtoOutputRatingMovie>();
+            cfg.CreateMap<DbRatingMovie, RatingMovie>();
+            cfg.CreateMap<Boolean, DtoOutputRatingMovie>();
+            cfg.CreateMap<DtoOutputRatingMovie, RatingMovie>();
 
         });
         return new AutoMapper.Mapper(config);

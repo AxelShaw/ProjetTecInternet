@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using Domain;
 
 namespace Infrastructure.Ef.DbEntities;
 
@@ -22,4 +23,5 @@ public class DbMovie
     public string Director { get; set; }
     
     public string Release_movie { get; set; }
+    
 }

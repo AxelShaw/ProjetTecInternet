@@ -22,4 +22,5 @@ public class Movie
     
     public string Release_movie { get; set; }
     
+
 }   
