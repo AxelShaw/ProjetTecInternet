@@ -4,7 +4,7 @@ using Infrastructure.Ef;
 
 namespace Application.UseCases;
 
-public class UseCaseFetchMovieByName :IUseCaseParameterizedQuery<DtoOutputMovie, string>
+public class UseCaseFetchMovieByName :IUseCaseParameterizedQuery<IEnumerable<DtoOutputMovie>, string>
 {
     private readonly IMovieRepository _movieRepository;
 
@@ -13,9 +13,9 @@ public class UseCaseFetchMovieByName :IUseCaseParameterizedQuery<DtoOutputMovie,
         _movieRepository = movieRepository;
     }
 
-    public DtoOutputMovie Execute(string name)
+    public IEnumerable<DtoOutputMovie> Execute(string name)
     {
         var dbUser = _movieRepository.FetchByName(name);
-        return Mapper.GetInstance().Map<DtoOutputMovie>(dbUser);
+        return Mapper.GetInstance().Map<List<DtoOutputMovie>>(dbUser);
     }
 }

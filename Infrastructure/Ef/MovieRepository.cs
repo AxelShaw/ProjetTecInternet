@@ -1,7 +1,9 @@
-﻿using Domain;
+﻿using System.Collections.Immutable;
+using Domain;
 using Infrastructure.Ef.DbEntities;
 using Infrastructure.Utils;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.ChangeTracking;
 
 namespace Infrastructure.Ef;
 
@@ -31,10 +33,10 @@ public class MovieRepository : IMovieRepository
 
         return movie;
     }
-    public DbMovie FetchByName(string name)
+    public IEnumerable<DbMovie> FetchByName(string name)
     {
         using var context = _contextProvider.NewContext();
-        var movie = context.Movie.FirstOrDefault(g => g.NameMovie.Contains(name) == true);
+        var movie = context.Movie.ToList().Where(g => g.NameMovie.ToLower().Contains(name.ToLower()));
 
         if (movie == null)
             throw new KeyNotFoundException($"Comment Movie with id {name} has not been found");
