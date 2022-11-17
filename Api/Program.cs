@@ -22,6 +22,7 @@ builder.Services.AddScoped<IMovieRepository, MovieRepository>();
 builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddScoped<ISerieRepository, SerieRepository>();
 builder.Services.AddScoped<IRatingMovieRepository, RatingMovieRepository>();
+builder.Services.AddScoped<IRatingSerieRepository, RatingSerieRepository>();
 builder.Services.AddScoped<ICommentMovieRepository, CommentMovieRepository>();
 
 builder.Services.AddScoped<UseCaseFetchAllMovies>();
