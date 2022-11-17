@@ -31,6 +31,16 @@ public class MovieRepository : IMovieRepository
 
         return movie;
     }
+    public DbMovie FetchByName(string name)
+    {
+        using var context = _contextProvider.NewContext();
+        var movie = context.Movie.FirstOrDefault(g => g.NameMovie == name);
+
+        if (movie == null)
+            throw new KeyNotFoundException($"Comment Movie with id {name} has not been found");
+
+        return movie;
+    }
 
     public DbMovie Create(string name, int minute, string type, string description, string image, string genre,
         string director, string release)

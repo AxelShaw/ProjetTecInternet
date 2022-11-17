@@ -19,6 +19,7 @@ public class MovieContext : DbContext
     public DbSet<DbUser> User { get; set; }
     public DbSet<DbSerie> Serie { get; set; }
     public DbSet<DbRatingMovie> RatingMovie { get; set; }
+    public DbSet<DbCommentMovie> CommentMovie { get; set; }
 
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
@@ -78,6 +79,17 @@ public class MovieContext : DbContext
             entity.Property(m => m.MovieRefId).HasColumnName("idmovie");
             entity.Property(m => m.Average_rating).HasColumnName("average_rating");
             entity.Property(m => m.NumVote).HasColumnName("numVote");
+        });
+        
+        modelBuilder.Entity<DbCommentMovie>(entity =>
+        {
+            entity.ToTable("COMMENTMOVIE");
+            entity.HasKey(m => m.IdComMovie);
+            entity.Property(m => m.IdComMovie).HasColumnName("idComMovie");
+            entity.Property(m => m.Rating).HasColumnName("rating");
+            entity.Property(m => m.CommentText).HasColumnName("commentText");
+            entity.Property(m => m.IdMovieRef).HasColumnName("idmovie");
+            entity.Property(m => m.IdUserRef).HasColumnName("iduser");
         });
     }
     

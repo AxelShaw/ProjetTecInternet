@@ -16,4 +16,8 @@
       <ProjectReference Include="..\Infrastructure\Infrastructure.csproj" />
     </ItemGroup>
 
+    <ItemGroup>
+      <Compile Remove="Controllers\CommentMovie\CommentMovie.cs" />
+    </ItemGroup>
+
 </Project>

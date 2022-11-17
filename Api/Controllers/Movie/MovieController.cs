@@ -1,5 +1,4 @@
 ﻿using Application.UseCases;
-using Application.UseCases.Movies;
 using Application.UseCases.Movies.Dtos;
 using Infrastructure.Ef.DbEntities;
 using Microsoft.AspNetCore.Mvc;
@@ -13,16 +12,20 @@ public class MovieController : ControllerBase
     private readonly UseCaseFetchAllMovies _useCaseFetchAllMovies;
     private readonly UseCaseCreateMovie _useCaseCreateMovie;
     private readonly UseCaseFetchMovieById _useCaseFetchMovieById;
+    private readonly UseCaseFetchMovieByName _useCaseFetchMovieByName;
     private readonly UseCaseDeleteMovie _useCaseDeleteMovie;
     private readonly UseCaseUpdateMovie _useCaseUpdateMovie;
 
-    public MovieController(UseCaseFetchAllMovies useCaseFetchAllMovies, UseCaseCreateMovie useCaseCreateMovie, UseCaseFetchMovieById useCaseFetchMovieById,UseCaseDeleteMovie useCaseDeleteMovie, UseCaseUpdateMovie useCaseUpdateMovie)
+    public MovieController(UseCaseFetchAllMovies useCaseFetchAllMovies, UseCaseCreateMovie useCaseCreateMovie,
+        UseCaseFetchMovieById useCaseFetchMovieById,UseCaseDeleteMovie useCaseDeleteMovie,
+        UseCaseUpdateMovie useCaseUpdateMovie, UseCaseFetchMovieByName useCaseFetchMovieByName)
     {
         _useCaseFetchAllMovies = useCaseFetchAllMovies;
         _useCaseCreateMovie = useCaseCreateMovie;
         _useCaseFetchMovieById = useCaseFetchMovieById;
         _useCaseDeleteMovie = useCaseDeleteMovie;
         _useCaseUpdateMovie = useCaseUpdateMovie;
+        _useCaseFetchMovieByName = useCaseFetchMovieByName;
     }
     
     [HttpGet]
@@ -70,6 +73,25 @@ public class MovieController : ControllerBase
         try
         {
             return _useCaseFetchMovieById.Execute(id);
+        }
+        catch (KeyNotFoundException e)
+        {
+            return NotFound(new
+            {
+                e.Message
+            });
+        }
+    }
+    
+    [HttpGet]
+    [Route("{name:}")]
+    [ProducesResponseType(StatusCodes.Status200OK)]
+    [ProducesResponseType(StatusCodes.Status404NotFound)]
+    public ActionResult<DtoOutputMovie> FetchByName(string name)
+    {
+        try
+        {
+            return _useCaseFetchMovieByName.Execute(name);
         }
         catch (KeyNotFoundException e)
         {
