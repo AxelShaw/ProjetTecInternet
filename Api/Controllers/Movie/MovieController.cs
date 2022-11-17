@@ -84,7 +84,7 @@ public class MovieController : ControllerBase
     }
     
     [HttpGet]
-    [Route("{:string}")]
+    [Route("string")]
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
     public ActionResult<DtoOutputMovie> FetchByName(string name)
