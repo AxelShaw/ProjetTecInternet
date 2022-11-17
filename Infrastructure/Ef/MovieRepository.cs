@@ -34,7 +34,7 @@ public class MovieRepository : IMovieRepository
     public DbMovie FetchByName(string name)
     {
         using var context = _contextProvider.NewContext();
-        var movie = context.Movie.FirstOrDefault(g => g.NameMovie == name);
+        var movie = context.Movie.FirstOrDefault(g => g.NameMovie.Contains(name) == true);
 
         if (movie == null)
             throw new KeyNotFoundException($"Comment Movie with id {name} has not been found");
