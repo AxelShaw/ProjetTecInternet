@@ -18,6 +18,19 @@
 
     <ItemGroup>
       <Compile Remove="Controllers\CommentMovie\CommentMovie.cs" />
+      <Compile Remove="Controllers\CommentSerieController\**" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <EmbeddedResource Remove="Controllers\CommentSerieController\**" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Remove="Controllers\CommentSerieController\**" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Content Remove="Controllers\CommentSerieController\**" />
     </ItemGroup>
 
 </Project>

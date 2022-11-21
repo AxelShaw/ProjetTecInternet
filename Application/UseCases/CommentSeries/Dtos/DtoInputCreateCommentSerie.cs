@@ -1,12 +1,12 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace Application.UseCases.CommentMovies.Dtos;
+namespace Application.UseCases.CommentSeries.Dtos;
 
-public class DtoInputCreateCommentMovie
+public class DtoInputCreateCommentSerie
 {
     [Required]public int Rating { get; set; }
     public string CommentText { get; set; }
 
-    [Required]public int IdMovieRef{ get; set; }
+    [Required]public int IdSerieRef{ get; set; }
     [Required]public int IdUserRef{ get; set; }
 }

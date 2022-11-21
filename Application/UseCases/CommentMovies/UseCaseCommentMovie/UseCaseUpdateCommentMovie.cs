@@ -1,9 +1,12 @@
-﻿using Infrastructure.Ef;
+﻿using Application.UseCases.CommentMovies.Dtos;
+using Application.UseCases.Utils;
+using Domain;
+using Infrastructure.Ef;
 using Infrastructure.Ef.DbEntities;
 
 namespace Application.UseCases.CommentMovies.UseCaseCommentMovie;
 
-public class UseCaseUpdateCommentMovie
+public class UseCaseUpdateCommentMovie : IUseCaseParameterizedQueryUpCommentMovie<DtoOutputCommentMovie, CommentMovie>
 {
     private readonly ICommentMovieRepository _commentMovieRepository;
 

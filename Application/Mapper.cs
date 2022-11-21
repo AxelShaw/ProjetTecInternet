@@ -1,4 +1,5 @@
 ﻿using Application.UseCases.CommentMovies.Dtos;
+using Application.UseCases.CommentSeries.Dtos;
 using Application.UseCases.Movies.Dtos;
 using Application.UseCases.RatingMovies.Dtos;
 using Application.UseCases.Series.Dtos;
@@ -59,6 +60,14 @@ public class Mapper
             cfg.CreateMap<DbRatingSerie, RatingSerie>();
             cfg.CreateMap<Boolean, DtoOutputRatingSerie>();
             cfg.CreateMap<DtoOutputRatingSerie, RatingSerie>();
+            
+            cfg.CreateMap<CommentSerie, DtoOutputCommentSerie>();
+            cfg.CreateMap<DbCommentSerie, DtoOutputCommentSerie>();
+            cfg.CreateMap<DbCommentSerie, CommentSerie>();
+            cfg.CreateMap<Boolean, DtoOutputCommentSerie>();
+            cfg.CreateMap<DtoOutputCommentSerie, CommentSerie>();
+            
+            
 
         });
         return new AutoMapper.Mapper(config);
