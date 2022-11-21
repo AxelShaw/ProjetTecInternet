@@ -84,22 +84,12 @@ public class MovieController : ControllerBase
     }
     
     [HttpGet]
-    [Route("{string}")]
+    [Route("{name}")]
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
-    public ActionResult<DtoOutputMovie> FetchByName(string name)
+    public ActionResult<IEnumerable<DtoOutputMovie>> FetchByName(string name)
     {
-        try
-        {
-            return _useCaseFetchMovieByName.Execute(name);
-        }
-        catch (KeyNotFoundException e)
-        {
-            return NotFound(new
-            {
-                e.Message
-            });
-        }
+        return Ok(_useCaseFetchMovieByName.Execute(name));
     }
     
     [HttpPut]
