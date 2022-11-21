@@ -84,7 +84,7 @@ public class MovieContext : DbContext
         
         modelBuilder.Entity<DbRatingSerie>(entity =>
         {
-            entity.ToTable("RATINGSERIE");
+            entity.ToTable("RATINGSERIES");
             entity.HasKey(m => m.SerieRefId);
             entity.Property(m => m.SerieRefId).HasColumnName("idserie");
             entity.Property(m => m.Average_rating).HasColumnName("average_rating");

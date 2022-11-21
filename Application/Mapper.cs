@@ -35,6 +35,7 @@ public class Mapper
             cfg.CreateMap<DbUser, User>();
             cfg.CreateMap<Boolean, DtoOutputUser>();
             cfg.CreateMap<DtoOutputSerie, Serie>();
+            
             cfg.CreateMap<Serie, DtoOutputSerie>();
             cfg.CreateMap<DbSerie, DtoOutputSerie>();
             cfg.CreateMap<DbSerie, Serie>();
@@ -52,6 +53,12 @@ public class Mapper
             cfg.CreateMap<DbCommentMovie, CommentMovie>();
             cfg.CreateMap<Boolean, DtoOutputCommentMovie>();
             cfg.CreateMap<DtoOutputCommentMovie, CommentMovie>();
+            
+            cfg.CreateMap<RatingSerie, DtoOutputRatingSerie>();
+            cfg.CreateMap<DbRatingSerie, DtoOutputRatingSerie>();
+            cfg.CreateMap<DbRatingSerie, RatingSerie>();
+            cfg.CreateMap<Boolean, DtoOutputRatingSerie>();
+            cfg.CreateMap<DtoOutputRatingSerie, RatingSerie>();
 
         });
         return new AutoMapper.Mapper(config);

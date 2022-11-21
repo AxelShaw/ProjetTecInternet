@@ -2,6 +2,7 @@ using Api;
 using Application.UseCases;
 using Application.UseCases.CommentMovies.UseCaseCommentMovie;
 using Application.UseCases.RatingMovies.UseCaseRatingMovie;
+using Application.UseCases.RatingSerie.UseCaseRatingSerie;
 using Application.UseCases.Series.UseCaseSerie;
 using Infrastructure.Ef;
 using Infrastructure.Utils;
@@ -29,30 +30,35 @@ builder.Services.AddScoped<UseCaseFetchAllMovies>();
 builder.Services.AddScoped<UseCaseFetchAllUsers>();
 builder.Services.AddScoped<UseCaseFetchAllSeries>();
 builder.Services.AddScoped<UseCaseFetchAllRatingMovies>();
+builder.Services.AddScoped<UseCaseFetchAllRatingSeries>();
 builder.Services.AddScoped<UseCaseFetchAllCommentMovies>();
 
 builder.Services.AddScoped<UseCaseCreateMovie>();
 builder.Services.AddScoped<UseCaseCreateUser>();
 builder.Services.AddScoped<UseCaseCreateSerie>();
 builder.Services.AddScoped<UseCaseCreateRatingMovie>();
+builder.Services.AddScoped<UseCaseCreateRatingSerie>();
 builder.Services.AddScoped<UseCaseCreateCommentMovie>();
 
 builder.Services.AddScoped<UseCaseFetchMovieById>();
 builder.Services.AddScoped<UseCaseFetchUserById>();
 builder.Services.AddScoped<UseCaseFetchSerieById>();
 builder.Services.AddScoped<UseCaseFetchRatingMovieById>();
+builder.Services.AddScoped<UseCaseFetchRatingSerieById>();
 builder.Services.AddScoped<UseCaseFetchCommentMovieById>();
 
 builder.Services.AddScoped<UseCaseDeleteMovie>();
 builder.Services.AddScoped<UseCaseDeleteUser>();
 builder.Services.AddScoped<UseCaseDeleteSerie>();
 builder.Services.AddScoped<UseCaseDeleteRatingMovie>();
+builder.Services.AddScoped<UseCaseDeleteRatingSerie>();
 builder.Services.AddScoped<UseCaseDeleteCommentMovie>();
 
 builder.Services.AddScoped<UseCaseUpdateMovie>();
 builder.Services.AddScoped<UseCaseUpdateUser>();
 builder.Services.AddScoped<UseCaseUpdateSerie>();
 builder.Services.AddScoped<UseCaseUpdateRatingMovie>();
+builder.Services.AddScoped<UseCaseUpdateRatingSerie>();
 builder.Services.AddScoped<UseCaseUpdateCommentMovie>();
 
 builder.Services.AddScoped<UseCaseFetchMovieByName>();
