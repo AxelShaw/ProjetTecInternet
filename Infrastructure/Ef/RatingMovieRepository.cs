@@ -74,4 +74,16 @@ public class RatingMovieRepository : IRatingMovieRepository
             return false;
         }
     }
+    
+    public IEnumerable<DbRatingMovie> FetchAllDown()
+    {
+        using var context = _contextProvider.NewContext();
+        return context.RatingMovie.OrderBy(r => r.Average_rating).ToList();
+    }
+    
+    public IEnumerable<DbRatingMovie> FetchAllTop()
+    {
+        using var context = _contextProvider.NewContext();
+        return context.RatingMovie.OrderByDescending(r => r.Average_rating).ToList();
+    }
 }

@@ -10,4 +10,8 @@ public interface IRatingMovieRepository
     DbRatingMovie Create(int average_rating, int numVote, int MovieRefId );
     bool Delete(int id);
     bool Update(DbRatingMovie dbRatingMovie);
+    
+    IEnumerable<DbRatingMovie> FetchAllTop();
+    
+    IEnumerable<DbRatingMovie> FetchAllDown();
 }

@@ -13,21 +13,40 @@ public class RatingMovieController : ControllerBase
     private readonly UseCaseFetchRatingMovieById _useCaseFetchRatingMovieById;
     private readonly UseCaseDeleteRatingMovie _useCaseDeleteRatingMovie;
     private readonly UseCaseUpdateRatingMovie _useCaseUpdateRatingMovie;
+    private readonly UseCaseFetchAllRatingMoviesDown _useCaseFetchAllRatingMoviesDown;
+    private readonly UseCaseFetchAllRatingMoviesTop _useCaseFetchAllRatingMoviesTop;
+
 
     public RatingMovieController(UseCaseFetchAllRatingMovies useCaseFetchAllRatingMovies, UseCaseCreateRatingMovie useCaseCreateRatingMovie,
-        UseCaseFetchRatingMovieById useCaseFetchRatingMovieById,UseCaseDeleteRatingMovie useCaseDeleteRatingMovie, UseCaseUpdateRatingMovie useCaseUpdateRatingMovie)
+        UseCaseFetchRatingMovieById useCaseFetchRatingMovieById,UseCaseDeleteRatingMovie useCaseDeleteRatingMovie, UseCaseUpdateRatingMovie useCaseUpdateRatingMovie, UseCaseFetchAllRatingMoviesDown useCaseFetchAllRatingMoviesDown, UseCaseFetchAllRatingMoviesTop useCaseFetchAllRatingMoviesTop)
     {
         _useCaseFetchAllRatingMovies = useCaseFetchAllRatingMovies;
         _useCaseCreateRatingMovie = useCaseCreateRatingMovie;
         _useCaseFetchRatingMovieById = useCaseFetchRatingMovieById;
         _useCaseDeleteRatingMovie = useCaseDeleteRatingMovie;
         _useCaseUpdateRatingMovie = useCaseUpdateRatingMovie;
+        _useCaseFetchAllRatingMoviesDown = useCaseFetchAllRatingMoviesDown;
+        _useCaseFetchAllRatingMoviesTop = useCaseFetchAllRatingMoviesTop;
     }
     
     [HttpGet]
     public ActionResult<IEnumerable<DtoOutputRatingMovie>> FetchAll()
     {
         return Ok(_useCaseFetchAllRatingMovies.Execute());
+    }
+    
+    [HttpGet]
+    [Route("Down")]
+    public ActionResult<IEnumerable<DtoOutputRatingMovie>> FetchAllDown()
+    {
+        return Ok(_useCaseFetchAllRatingMoviesDown.Execute());
+    }
+    
+    [HttpGet]
+    [Route("Top")]
+    public ActionResult<IEnumerable<DtoOutputRatingMovie>> FetchAllTop()
+    {
+        return Ok(_useCaseFetchAllRatingMoviesTop.Execute());
     }
     
     [HttpPost]
@@ -86,4 +105,7 @@ public class RatingMovieController : ControllerBase
     {
         return _useCaseUpdateRatingMovie.Execute(ratingMovie) ? NoContent() : NotFound();
     }
+    
+
+    
 }

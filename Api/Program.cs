@@ -69,6 +69,9 @@ builder.Services.AddScoped<UseCaseUpdateCommentMovie>();
 builder.Services.AddScoped<UseCaseUpdateCommentSerie>();
 
 builder.Services.AddScoped<UseCaseFetchMovieByName>();
+builder.Services.AddScoped<UseCaseFetchAllRatingMoviesDown>();
+builder.Services.AddScoped<UseCaseFetchAllRatingMoviesTop>();
+
 
 builder.Services.AddCors(options =>
 {
