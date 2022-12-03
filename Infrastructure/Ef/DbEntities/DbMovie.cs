@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.Net.Mime;
 using Domain;
 
 namespace Infrastructure.Ef.DbEntities;
@@ -16,7 +17,7 @@ public class DbMovie
     
     public string DescriptionMovie { get; set; }
     
-    public string ImageMovie { get; set; }
+    public byte[] ImageMovie { get; set; }
     
     public string FilmGenre { get; set; }
     

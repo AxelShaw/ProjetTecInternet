@@ -12,7 +12,7 @@ public class DtoInputCreateMovie
 
     [Required] public string DescriptionMovie { get; set; }
 
-    [Required] public string ImageMovie { get; set; }
+    [Required] public byte[] ImageMovie { get; set; }
 
     [Required] public string FilmGenre { get; set; }
 

@@ -14,7 +14,7 @@ public class Movie
     
     public string DescriptionMovie { get; set; }
     
-    public string ImageMovie { get; set; }
+    public byte[] ImageMovie { get; set; }
     
     public string FilmGenre { get; set; }
     

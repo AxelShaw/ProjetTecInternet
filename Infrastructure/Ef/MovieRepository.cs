@@ -10,9 +10,10 @@ namespace Infrastructure.Ef;
 public class MovieRepository : IMovieRepository
 {
     private MovieContextProvider _contextProvider;
+    private IMovieRepository _movieRepositoryImplementation;
 
     public MovieRepository(MovieContextProvider contextProvider)
-    {
+    {   
         _contextProvider = contextProvider;
     }
 
@@ -44,7 +45,7 @@ public class MovieRepository : IMovieRepository
         return movie;
     }
 
-    public DbMovie Create(string name, int minute, string type, string description, string image, string genre,
+    public DbMovie Create(string name, int minute, string type, string description, byte[] image, string genre,
         string director, string release)
     {
         using var context = _contextProvider.NewContext();
