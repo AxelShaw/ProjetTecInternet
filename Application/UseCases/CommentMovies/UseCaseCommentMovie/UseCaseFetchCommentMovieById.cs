@@ -4,7 +4,7 @@ using Infrastructure.Ef;
 
 namespace Application.UseCases.CommentMovies.UseCaseCommentMovie;
 
-public class UseCaseFetchCommentMovieById : IUseCaseParameterizedQuery<DtoOutputCommentMovie, int>
+public class UseCaseFetchCommentMovieById : IUseCaseParameterizedQuery<IEnumerable<DtoOutputCommentMovie>, int>
 {
     private readonly ICommentMovieRepository _commentMovieRepository;
 
@@ -13,9 +13,9 @@ public class UseCaseFetchCommentMovieById : IUseCaseParameterizedQuery<DtoOutput
         _commentMovieRepository = commentMovieRepository;
     }
 
-    public DtoOutputCommentMovie Execute(int id)
+    public IEnumerable<DtoOutputCommentMovie> Execute(int id)
     {
         var dbUser = _commentMovieRepository.FetchById(id);
-        return Mapper.GetInstance().Map<DtoOutputCommentMovie>(dbUser);
+        return Mapper.GetInstance().Map<IEnumerable<DtoOutputCommentMovie>>(dbUser);
     }
 }

@@ -64,19 +64,9 @@ public class CommentMovieController : ControllerBase
     [Route("{id:int}")]
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
-    public ActionResult<DtoOutputCommentMovie> FetchById(int id)
+    public ActionResult<IEnumerable<DtoOutputCommentMovie>> FetchById(int id)
     {
-        try
-        {
-            return _useCaseFetchCommentMovieById.Execute(id);
-        }
-        catch (KeyNotFoundException e)
-        {
-            return NotFound(new
-            {
-                e.Message
-            });
-        }
+        return Ok(_useCaseFetchCommentMovieById.Execute(id));
     }
     
     [HttpPut]

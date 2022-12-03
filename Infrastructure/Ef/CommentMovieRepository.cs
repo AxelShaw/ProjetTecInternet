@@ -20,15 +20,10 @@ public class CommentMovieRepository :ICommentMovieRepository
         return context.CommentMovie.ToList();
     }
 
-    public DbCommentMovie FetchById(int id)
+    public IEnumerable<DbCommentMovie> FetchById(int id)
     {
         using var context = _contextProvider.NewContext();
-        var commentMovie = context.CommentMovie.FirstOrDefault(g => g.IdComMovie == id);
-
-        if (commentMovie == null)
-            throw new KeyNotFoundException($"Comment Movie with id {id} has not been found");
-
-        return commentMovie;
+        return context.CommentMovie.ToList().Where(g => g.IdMovieRef == id);
     }
 
 
