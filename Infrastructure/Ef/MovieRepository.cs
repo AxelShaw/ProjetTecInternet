@@ -1,4 +1,5 @@
 ﻿using System.Collections.Immutable;
+using System.ComponentModel.DataAnnotations;
 using Domain;
 using Infrastructure.Ef.DbEntities;
 using Infrastructure.Utils;
@@ -38,6 +39,8 @@ public class MovieRepository : IMovieRepository
     {
         using var context = _contextProvider.NewContext();
         var movie = context.Movie.ToList().Where(g => g.NameMovie.ToLower().Contains(name.ToLower()));
+        
+        movie = movie.Take(5);
 
         if (movie == null)
             throw new KeyNotFoundException($"Comment Movie with id {name} has not been found");
