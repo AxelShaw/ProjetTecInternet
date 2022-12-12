@@ -338,3 +338,4 @@ C:\Users\maadi\Desktop\Bloc 3\Technologie Internet\Rider\Projet(Partie Back-end)
 C:\Users\maadi\Desktop\Bloc 3\Technologie Internet\Rider\Projet(Partie Back-end)\ProjetTecInternetRider\Api\obj\Debug\net6.0\Api.pdb
 C:\Users\maadi\Desktop\Bloc 3\Technologie Internet\Rider\Projet(Partie Back-end)\ProjetTecInternetRider\Api\obj\Debug\net6.0\Api.genruntimeconfig.cache
 C:\Users\maadi\Desktop\Bloc 3\Technologie Internet\Rider\Projet(Partie Back-end)\ProjetTecInternetRider\Api\obj\Debug\net6.0\ref\Api.dll
+C:\Users\shaw\Desktop\Projet ti\rider\ProjetTecInternetRider\Api\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
