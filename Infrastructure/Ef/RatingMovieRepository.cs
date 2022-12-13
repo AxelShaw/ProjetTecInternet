@@ -86,4 +86,5 @@ public class RatingMovieRepository : IRatingMovieRepository
         using var context = _contextProvider.NewContext();
         return context.RatingMovie.OrderByDescending(r => r.Average_rating).ToList();
     }
+
 }

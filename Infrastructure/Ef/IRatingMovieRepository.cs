@@ -14,4 +14,5 @@ public interface IRatingMovieRepository
     IEnumerable<DbRatingMovie> FetchAllTop();
     
     IEnumerable<DbRatingMovie> FetchAllDown();
+    
 }

@@ -97,4 +97,10 @@ public class MovieRepository : IMovieRepository
             return false;
         }
     }
+    public int FetchLastId()
+    {
+        using var context = _contextProvider.NewContext();
+        var max = context.Movie.Max(p => p.IdMovie);
+        return max;
+    }
 }

@@ -127,6 +127,7 @@ namespace ProjetTi;
             
             services.AddScoped<UseCaseFetchAllRatingMoviesDown>();
             services.AddScoped<UseCaseFetchAllRatingMoviesTop>();
+            services.AddScoped<UseCaseFetchLastIdMovie>();
                     
     }
 

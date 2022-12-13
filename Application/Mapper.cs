@@ -30,6 +30,7 @@ public class Mapper
             cfg.CreateMap<DbMovie, Movie>();
             cfg.CreateMap<Boolean, DtoOutputMovie>();
             cfg.CreateMap<DtoOutputMovie, Movie>();
+            cfg.CreateMap<Int32 , DtoOutputMovie>();
             
             cfg.CreateMap<User, DtoOutputUser>();
             cfg.CreateMap<DbUser, DtoOutputUser>();

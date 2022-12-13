@@ -15,10 +15,12 @@ public class MovieController : ControllerBase
     private readonly UseCaseFetchMovieByName _useCaseFetchMovieByName;
     private readonly UseCaseDeleteMovie _useCaseDeleteMovie;
     private readonly UseCaseUpdateMovie _useCaseUpdateMovie;
+    private readonly UseCaseFetchLastIdMovie _useCaseFetchLastIdMovie;
 
     public MovieController(UseCaseFetchAllMovies useCaseFetchAllMovies, UseCaseCreateMovie useCaseCreateMovie,
         UseCaseFetchMovieById useCaseFetchMovieById,UseCaseDeleteMovie useCaseDeleteMovie,
-        UseCaseUpdateMovie useCaseUpdateMovie, UseCaseFetchMovieByName useCaseFetchMovieByName)
+        UseCaseUpdateMovie useCaseUpdateMovie, UseCaseFetchMovieByName useCaseFetchMovieByName, UseCaseFetchLastIdMovie
+            useCaseFetchLastIdMovie)
     {
         _useCaseFetchAllMovies = useCaseFetchAllMovies;
         _useCaseCreateMovie = useCaseCreateMovie;
@@ -26,6 +28,7 @@ public class MovieController : ControllerBase
         _useCaseDeleteMovie = useCaseDeleteMovie;
         _useCaseUpdateMovie = useCaseUpdateMovie;
         _useCaseFetchMovieByName = useCaseFetchMovieByName;
+        _useCaseFetchLastIdMovie = useCaseFetchLastIdMovie;
     }
     
     [HttpGet]
@@ -98,6 +101,13 @@ public class MovieController : ControllerBase
     public ActionResult Update(DbMovie movie)
     {
         return _useCaseUpdateMovie.Execute(movie) ? NoContent() : NotFound();
+    }
+    
+    [HttpGet]
+    [Route("Max")]
+    public  ActionResult FetchLastId()
+    {
+        return Ok(_useCaseFetchLastIdMovie.Execute());
     }
     
 }
