@@ -24,7 +24,6 @@ public class Mapper
         var config = new MapperConfiguration(cfg =>
         {
             // Source, Destination
-            // User
             cfg.CreateMap<Movie, DtoOutputMovie>();
             cfg.CreateMap<DbMovie, DtoOutputMovie>();
             cfg.CreateMap<DbMovie, Movie>();

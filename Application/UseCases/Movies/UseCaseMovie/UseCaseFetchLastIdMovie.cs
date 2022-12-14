@@ -4,7 +4,7 @@ using Infrastructure.Ef;
 
 namespace Application.UseCases;
 
-public class UseCaseFetchLastIdMovie : IUseCaseQuery<DtoOutputMovie>
+public class UseCaseFetchLastIdMovie : IUseCaseQuery<int>
 {
     private readonly IMovieRepository _movieRepository;
 
@@ -13,9 +13,9 @@ public class UseCaseFetchLastIdMovie : IUseCaseQuery<DtoOutputMovie>
         _movieRepository = movieRepository;
     }
     
-    public DtoOutputMovie Execute()
+    public int Execute()
     {
         var dbUser = _movieRepository.FetchLastId();
-        return Mapper.GetInstance().Map<DtoOutputMovie>(dbUser);
+        return Mapper.GetInstance().Map<Int32>(dbUser);
     }
 }
