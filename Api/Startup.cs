@@ -62,6 +62,14 @@ namespace ProjetTi;
                     ValidateIssuerSigningKey = true,
                     IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(Configuration["Jwt:Key"]))
                 };
+                options.Events = new JwtBearerEvents
+                {
+                    OnMessageReceived = context =>
+                    {
+                        context.Token = context.Request.Cookies["cookie"];
+                        return Task.CompletedTask;
+                    },
+                };
             });
             
             // Add services to the container.
