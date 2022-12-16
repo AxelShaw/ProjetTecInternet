@@ -15,10 +15,12 @@ public class RatingMovieController : ControllerBase
     private readonly UseCaseUpdateRatingMovie _useCaseUpdateRatingMovie;
     private readonly UseCaseFetchAllRatingMoviesDown _useCaseFetchAllRatingMoviesDown;
     private readonly UseCaseFetchAllRatingMoviesTop _useCaseFetchAllRatingMoviesTop;
+    private readonly UseCaseFetchAllRatingMoviesTopHome _useCaseFetchAllRatingMoviesTopHome;
+    private readonly UseCaseFetchAllRatingMoviesDownHome _useCaseFetchAllRatingMoviesDownHome;
 
 
     public RatingMovieController(UseCaseFetchAllRatingMovies useCaseFetchAllRatingMovies, UseCaseCreateRatingMovie useCaseCreateRatingMovie,
-        UseCaseFetchRatingMovieById useCaseFetchRatingMovieById,UseCaseDeleteRatingMovie useCaseDeleteRatingMovie, UseCaseUpdateRatingMovie useCaseUpdateRatingMovie, UseCaseFetchAllRatingMoviesDown useCaseFetchAllRatingMoviesDown, UseCaseFetchAllRatingMoviesTop useCaseFetchAllRatingMoviesTop)
+        UseCaseFetchRatingMovieById useCaseFetchRatingMovieById,UseCaseDeleteRatingMovie useCaseDeleteRatingMovie, UseCaseUpdateRatingMovie useCaseUpdateRatingMovie, UseCaseFetchAllRatingMoviesDown useCaseFetchAllRatingMoviesDown, UseCaseFetchAllRatingMoviesTop useCaseFetchAllRatingMoviesTop, UseCaseFetchAllRatingMoviesTopHome useCaseFetchAllRatingMoviesTopHome, UseCaseFetchAllRatingMoviesDownHome useCaseFetchAllRatingMoviesDownHome)
     {
         _useCaseFetchAllRatingMovies = useCaseFetchAllRatingMovies;
         _useCaseCreateRatingMovie = useCaseCreateRatingMovie;
@@ -27,6 +29,8 @@ public class RatingMovieController : ControllerBase
         _useCaseUpdateRatingMovie = useCaseUpdateRatingMovie;
         _useCaseFetchAllRatingMoviesDown = useCaseFetchAllRatingMoviesDown;
         _useCaseFetchAllRatingMoviesTop = useCaseFetchAllRatingMoviesTop;
+        _useCaseFetchAllRatingMoviesTopHome = useCaseFetchAllRatingMoviesTopHome;
+        _useCaseFetchAllRatingMoviesDownHome = useCaseFetchAllRatingMoviesDownHome;
     }
     
     [HttpGet]
@@ -47,6 +51,20 @@ public class RatingMovieController : ControllerBase
     public ActionResult<IEnumerable<DtoOutputRatingMovie>> FetchAllTop()
     {
         return Ok(_useCaseFetchAllRatingMoviesTop.Execute());
+    }
+    
+    [HttpGet]
+    [Route("DownHome")]
+    public ActionResult<IEnumerable<DtoOutputRatingMovie>> FetchAllDownHome()
+    {
+        return Ok(_useCaseFetchAllRatingMoviesDownHome.Execute());
+    }
+    
+    [HttpGet]
+    [Route("TopHome")]
+    public ActionResult<IEnumerable<DtoOutputRatingMovie>> FetchAllTopHome()
+    {
+        return Ok(_useCaseFetchAllRatingMoviesTopHome.Execute());
     }
     
     [HttpPost]
