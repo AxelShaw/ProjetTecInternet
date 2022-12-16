@@ -15,7 +15,7 @@ public class UseCaseDeleteRatingMovie: IUseCaseParameterizedQuery<DtoOutputRatin
 
     public DtoOutputRatingMovie Execute(int id)
     {
-        var dbUser = _ratingMovieRepository.Delete(id);
-        return Mapper.GetInstance().Map<DtoOutputRatingMovie>(dbUser);
+        var dbRatingMovie = _ratingMovieRepository.Delete(id);
+        return Mapper.GetInstance().Map<DtoOutputRatingMovie>(dbRatingMovie);
     }
 }

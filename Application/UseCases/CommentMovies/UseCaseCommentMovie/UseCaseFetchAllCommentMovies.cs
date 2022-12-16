@@ -15,7 +15,7 @@ public class UseCaseFetchAllCommentMovies : IUseCaseQuery<IEnumerable<DtoOutputC
 
     public IEnumerable<DtoOutputCommentMovie> Execute()
     {
-        var dbUsers = _commentMovieRepository.FetchAll();
-        return Mapper.GetInstance().Map<IEnumerable<DtoOutputCommentMovie>>(dbUsers);
+        var dbCommentMovie = _commentMovieRepository.FetchAll();
+        return Mapper.GetInstance().Map<IEnumerable<DtoOutputCommentMovie>>(dbCommentMovie);
     }
 }

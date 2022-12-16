@@ -15,7 +15,7 @@ public class UseCaseDeleteCommentMovie : IUseCaseParameterizedQuery<DtoOutputCom
 
     public DtoOutputCommentMovie Execute(int id)
     {
-        var dbUser = _commentMovieRepository.Delete(id);
-        return Mapper.GetInstance().Map<DtoOutputCommentMovie>(dbUser);
+        var dbCommentMovie = _commentMovieRepository.Delete(id);
+        return Mapper.GetInstance().Map<DtoOutputCommentMovie>(dbCommentMovie);
     }
 }

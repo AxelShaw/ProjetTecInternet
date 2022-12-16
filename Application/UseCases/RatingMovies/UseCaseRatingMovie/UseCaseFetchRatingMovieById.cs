@@ -15,7 +15,7 @@ public class UseCaseFetchRatingMovieById : IUseCaseParameterizedQuery<DtoOutputR
 
     public DtoOutputRatingMovie Execute(int id)
     {
-        var dbUser = _ratingMovieRepository.FetchById(id);
-        return Mapper.GetInstance().Map<DtoOutputRatingMovie>(dbUser);
+        var dbRatingMovie = _ratingMovieRepository.FetchById(id);
+        return Mapper.GetInstance().Map<DtoOutputRatingMovie>(dbRatingMovie);
     }
 }

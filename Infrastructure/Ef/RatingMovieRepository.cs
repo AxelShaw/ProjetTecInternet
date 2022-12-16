@@ -95,7 +95,6 @@ public class RatingMovieRepository : IRatingMovieRepository
 
     public IEnumerable<DbRatingMovie> FetchAllDownHome()
     {
-        string strDate = DateTime.Now.ToString("MM/dd/yyyy");
         using var context = _contextProvider.NewContext();
         var rating = context.RatingMovie.OrderBy(r => r.Average_rating).ToList().Where(g => g.NumVote != 0);
         return rating;

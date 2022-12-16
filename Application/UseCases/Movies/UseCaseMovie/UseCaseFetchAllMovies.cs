@@ -16,7 +16,7 @@ public class UseCaseFetchAllMovies : IUseCaseQuery<IEnumerable<DtoOutputMovie>>
 
     public IEnumerable<DtoOutputMovie> Execute()
     {
-        var dbUsers = _movieRepository.FetchAll();
-        return Mapper.GetInstance().Map<IEnumerable<DtoOutputMovie>>(dbUsers);
+        var dbMovie = _movieRepository.FetchAll();
+        return Mapper.GetInstance().Map<IEnumerable<DtoOutputMovie>>(dbMovie);
     }
 }

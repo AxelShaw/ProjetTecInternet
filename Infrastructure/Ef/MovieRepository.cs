@@ -47,6 +47,19 @@ public class MovieRepository : IMovieRepository
 
         return movie;
     }
+    
+    public IEnumerable<DbMovie> FetchByGenre(string genre)
+    {
+        using var context = _contextProvider.NewContext();
+        var movie = context.Movie.ToList().Where(g => g.FilmGenre.ToLower().Contains(genre.ToLower()));
+        
+        movie = movie.Take(500);
+
+        if (movie == null)
+            throw new KeyNotFoundException($"Comment Movie with id {genre} has not been found");
+
+        return movie;
+    }
 
     public DbMovie Create(string name, int minute, string type, string description, byte[] image, string genre,
         string director, string release)
@@ -96,11 +109,5 @@ public class MovieRepository : IMovieRepository
         {
             return false;
         }
-    }
-    public int FetchLastId()
-    {
-        using var context = _contextProvider.NewContext();
-        var max = context.Movie.Max(p => p.IdMovie);
-        return max;
     }
 }

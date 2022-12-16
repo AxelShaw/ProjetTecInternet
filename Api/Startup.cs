@@ -132,12 +132,11 @@ namespace ProjetTi;
             services.AddScoped<UseCaseUpdateCommentSerie>();
 
             services.AddScoped<UseCaseFetchMovieByName>();
-            
             services.AddScoped<UseCaseFetchAllRatingMoviesDown>();
             services.AddScoped<UseCaseFetchAllRatingMoviesTop>();
-            services.AddScoped<UseCaseFetchLastIdMovie>();
             services.AddScoped<UseCaseFetchAllRatingMoviesTopHome>();
             services.AddScoped<UseCaseFetchAllRatingMoviesDownHome>();
+            services.AddScoped<UseCaseFetchMovieByGenre>();
             
             
                     

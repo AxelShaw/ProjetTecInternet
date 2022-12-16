@@ -15,7 +15,7 @@ public class UseCaseFetchCommentMovieById : IUseCaseParameterizedQuery<IEnumerab
 
     public IEnumerable<DtoOutputCommentMovie> Execute(int id)
     {
-        var dbUser = _commentMovieRepository.FetchById(id);
-        return Mapper.GetInstance().Map<IEnumerable<DtoOutputCommentMovie>>(dbUser);
+        var dbCommentMovie = _commentMovieRepository.FetchById(id);
+        return Mapper.GetInstance().Map<IEnumerable<DtoOutputCommentMovie>>(dbCommentMovie);
     }
 }

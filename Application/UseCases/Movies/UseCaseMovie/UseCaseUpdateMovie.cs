@@ -17,8 +17,8 @@ public class UseCaseUpdateMovie : IUseCaseParameterizedQueryUp<DtoOutputMovie, M
 
     public bool Execute(DbMovie movie)
     {
-        var dbUser = _movieRepository.Update(movie);
-        return Mapper.GetInstance().Map<bool>(dbUser);
+        var dbMovie = _movieRepository.Update(movie);
+        return Mapper.GetInstance().Map<bool>(dbMovie);
     }
     
 }

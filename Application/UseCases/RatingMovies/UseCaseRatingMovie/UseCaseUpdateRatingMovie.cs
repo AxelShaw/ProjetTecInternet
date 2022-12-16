@@ -17,7 +17,7 @@ public class UseCaseUpdateRatingMovie : IUseCaseParameterizedQueryUpRatingMovie<
 
     public bool Execute(DbRatingMovie ratingMovie)
     {
-        var dbUser = _ratingMovieRepository.Update(ratingMovie);
-        return Mapper.GetInstance().Map<bool>(dbUser);
+        var dbRatingMovie = _ratingMovieRepository.Update(ratingMovie);
+        return Mapper.GetInstance().Map<bool>(dbRatingMovie);
     }
 }

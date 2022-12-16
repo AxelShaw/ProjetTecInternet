@@ -17,7 +17,7 @@ public class UseCaseUpdateCommentMovie : IUseCaseParameterizedQueryUpCommentMovi
 
     public bool Execute(DbCommentMovie CommentMovie)
     {
-        var dbUser = _commentMovieRepository.Update(CommentMovie);
-        return Mapper.GetInstance().Map<bool>(dbUser);
+        var dbCommentMovie = _commentMovieRepository.Update(CommentMovie);
+        return Mapper.GetInstance().Map<bool>(dbCommentMovie);
     }
 }

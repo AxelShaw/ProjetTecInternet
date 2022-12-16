@@ -15,7 +15,7 @@ public class UseCaseFetchAllRatingMoviesDownHome : IUseCaseQuery<IEnumerable<Dto
 
     public IEnumerable<DtoOutputRatingMovie> Execute()
     {
-        var dbUsers = _ratingMovieRepository.FetchAllDownHome();
-        return Mapper.GetInstance().Map<IEnumerable<DtoOutputRatingMovie>>(dbUsers);
+        var dbRatingMovie = _ratingMovieRepository.FetchAllDownHome();
+        return Mapper.GetInstance().Map<IEnumerable<DtoOutputRatingMovie>>(dbRatingMovie);
     }
 }
