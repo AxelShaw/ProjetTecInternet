@@ -47,7 +47,7 @@ public class CommentMovieRepository :ICommentMovieRepository
         using var context = _contextProvider.NewContext();
         try
         {
-            context.CommentMovie.Remove(new DbCommentMovie { IdComMovie = id });
+            context.CommentMovie.Where(g => g.IdMovieRef == id).ExecuteDelete();
             return context.SaveChanges() == 1;
         }
         catch (DbUpdateConcurrencyException e)

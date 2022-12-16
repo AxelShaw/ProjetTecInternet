@@ -32,7 +32,7 @@ namespace ProjetTi;
 
                 options.AddPolicy(
 
-                    name: "AllowOrigin",
+                    name:"AllowOrigin",
 
                     builder => {
 
