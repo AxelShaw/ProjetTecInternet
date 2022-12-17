@@ -5,10 +5,7 @@ using System.Text;
 using Api;
 using Application.UseCases;
 using Application.UseCases.CommentMovies.UseCaseCommentMovie;
-using Application.UseCases.CommentSeries.UseCase;
 using Application.UseCases.RatingMovies.UseCaseRatingMovie;
-using Application.UseCases.RatingSerie.UseCaseRatingSerie;
-using Application.UseCases.Series.UseCaseSerie;
 using Infrastructure.Ef;
 using Infrastructure.Utils;
 
@@ -83,54 +80,36 @@ namespace ProjetTi;
             services.AddScoped<MovieContextProvider>();
             services.AddScoped<IMovieRepository, MovieRepository>();
             services.AddScoped<IUserRepository, UserRepository>();
-            services.AddScoped<ISerieRepository, SerieRepository>();
             services.AddScoped<IRatingMovieRepository, RatingMovieRepository>();
-            services.AddScoped<IRatingSerieRepository, RatingSerieRepository>();
             services.AddScoped<ICommentMovieRepository, CommentMovieRepository>();
-            services.AddScoped<ICommentSerieRepository, CommentSerieRepository>();
             
             services.AddTransient<IJwtAuthentificationManager, JwtAuthentificationManager>();
 
             services.AddScoped<UseCaseFetchAllMovies>();
             services.AddScoped<UseCaseFetchAllUsers>();
-            services.AddScoped<UseCaseFetchAllSeries>();
             services.AddScoped<UseCaseFetchAllRatingMovies>();
-            services.AddScoped<UseCaseFetchAllRatingSeries>();
             services.AddScoped<UseCaseFetchAllCommentMovies>();
-            services.AddScoped<UseCaseFetchAllCommentSeries>();
 
             services.AddScoped<UseCaseCreateMovie>();
             services.AddScoped<UseCaseCreateUser>();
-            services.AddScoped<UseCaseCreateSerie>();
             services.AddScoped<UseCaseCreateRatingMovie>();
-            services.AddScoped<UseCaseCreateRatingSerie>();
             services.AddScoped<UseCaseCreateCommentMovie>();
-            services.AddScoped<UseCaseCreateCommentSerie>();
 
             services.AddScoped<UseCaseFetchMovieById>();
             services.AddScoped<UseCaseFetchUserById>();
-            services.AddScoped<UseCaseFetchSerieById>();
             services.AddScoped<UseCaseFetchRatingMovieById>();
-            services.AddScoped<UseCaseFetchRatingSerieById>();
             services.AddScoped<UseCaseFetchCommentMovieById>();
-            services.AddScoped<UseCaseFetchCommentSerieById>();
 
             services.AddScoped<UseCaseDeleteMovie>();
             services.AddScoped<UseCaseDeleteUser>();
-            services.AddScoped<UseCaseDeleteSerie>();
             services.AddScoped<UseCaseDeleteRatingMovie>();
-            services.AddScoped<UseCaseDeleteRatingSerie>();
             services.AddScoped<UseCaseDeleteCommentMovie>();
             services.AddScoped<UseCaseDeleteCommentMovieByUser>();
-            services.AddScoped<UseCaseDeleteCommentSerie>();
 
             services.AddScoped<UseCaseUpdateMovie>();
             services.AddScoped<UseCaseUpdateUser>();
-            services.AddScoped<UseCaseUpdateSerie>();
             services.AddScoped<UseCaseUpdateRatingMovie>();
-            services.AddScoped<UseCaseUpdateRatingSerie>();
             services.AddScoped<UseCaseUpdateCommentMovie>();
-            services.AddScoped<UseCaseUpdateCommentSerie>();
 
             services.AddScoped<UseCaseFetchMovieByName>();
             services.AddScoped<UseCaseFetchByNameUser>();

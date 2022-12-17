@@ -17,11 +17,8 @@ public class MovieContext : DbContext
     
     public DbSet<DbMovie> Movie { get; set; }
     public DbSet<DbUser> User { get; set; }
-    public DbSet<DbSerie> Serie { get; set; }
     public DbSet<DbRatingMovie> RatingMovie { get; set; }
-    public DbSet<DbRatingSerie> RatingSerie { get; set; }
     public DbSet<DbCommentMovie> CommentMovie { get; set; }
-    public DbSet<DbCommentSerie> CommentSerie { get; set; }
 
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
@@ -61,18 +58,6 @@ public class MovieContext : DbContext
             entity.Property(m => m.profil_picture).HasColumnName("profil_picture");
         });
         
-        modelBuilder.Entity<DbSerie>(entity =>
-        {
-            entity.ToTable("SERIE");
-            entity.HasKey(m => m.IdSerie);
-            entity.Property(m => m.IdSerie).HasColumnName("idSerie");
-            entity.Property(m => m.NameSerie).HasColumnName("nameSerie");
-            entity.Property(m => m.SerieType).HasColumnName("seriesType");
-            entity.Property(m => m.DescriptionSerie).HasColumnName("descriptionSerie");
-            entity.Property(m => m.ImageSerie).HasColumnName("imageSeries");
-            entity.Property(m => m.NbSeason).HasColumnName("nbSeason");
-
-        });
         
         modelBuilder.Entity<DbRatingMovie>(entity =>
         {
@@ -83,14 +68,6 @@ public class MovieContext : DbContext
             entity.Property(m => m.NumVote).HasColumnName("numVote");
         });
         
-        modelBuilder.Entity<DbRatingSerie>(entity =>
-        {
-            entity.ToTable("RATINGSERIES");
-            entity.HasKey(m => m.SerieRefId);
-            entity.Property(m => m.SerieRefId).HasColumnName("idserie");
-            entity.Property(m => m.Average_rating).HasColumnName("average_rating");
-            entity.Property(m => m.NumVote).HasColumnName("numVote");
-        });
         
         modelBuilder.Entity<DbCommentMovie>(entity =>
         {
@@ -100,17 +77,6 @@ public class MovieContext : DbContext
             entity.Property(m => m.Rating).HasColumnName("rating");
             entity.Property(m => m.CommentText).HasColumnName("commentText");
             entity.Property(m => m.IdMovieRef).HasColumnName("idmovie");
-            entity.Property(m => m.IdUserRef).HasColumnName("idUser");
-        });
-        
-        modelBuilder.Entity<DbCommentSerie>(entity =>
-        {
-            entity.ToTable("COMMENTSERIES");
-            entity.HasKey(m => m.IdComSerie);
-            entity.Property(m => m.IdComSerie).HasColumnName("idComSerie");
-            entity.Property(m => m.Rating).HasColumnName("rating");
-            entity.Property(m => m.CommentText).HasColumnName("commentText");
-            entity.Property(m => m.IdSerieRef).HasColumnName("idserie");
             entity.Property(m => m.IdUserRef).HasColumnName("idUser");
         });
     }
