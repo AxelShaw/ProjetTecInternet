@@ -71,4 +71,17 @@ public class CommentMovieRepository :ICommentMovieRepository
             return false;
         }
     }
+    public bool DeleteByUser(int id)
+    {
+        using var context = _contextProvider.NewContext();
+        try
+        {
+            context.CommentMovie.Where(g => g.IdUserRef == id).ExecuteDelete();
+            return context.SaveChanges() == 1;
+        }
+        catch (DbUpdateConcurrencyException e)
+        {
+            return false;
+        }
+    }
 }

@@ -10,4 +10,6 @@ public interface ICommentMovieRepository
     DbCommentMovie Create(int rating, string commentText, int IdMovieRef, int IdUserRef );
     bool Delete(int id);
     bool Update(DbCommentMovie dbCommentMovie);
+
+    bool DeleteByUser(int id);
 }
