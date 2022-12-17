@@ -86,10 +86,20 @@ public class MovieContext : DbContext
         {
             entity.ToTable("FAVORIE");
             entity.HasKey(m => m.IdFav);
-            entity.Property(m => m.IdFav).HasColumnName("IdFav");
+            entity.Property(m => m.IdFav).HasColumnName("idFav");
             entity.Property(m => m.IdMovieRef).HasColumnName("idmovie");
             entity.Property(m => m.IdUserRef).HasColumnName("iduser");
             
+        });
+        
+        modelBuilder.Entity<DbActu>(entity =>
+        {
+            entity.ToTable("ACTU");
+            entity.HasKey(m => m.IdActu);
+            entity.Property(m => m.IdActu).HasColumnName("idActu");
+            entity.Property(m => m.IdMovieRef).HasColumnName("idmovie");
+            entity.Property(m => m.NewsActu).HasColumnName("news");
+            entity.Property(m => m.Release_actu).HasColumnName("Release_actu");
         });
     }
     
