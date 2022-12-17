@@ -12,5 +12,7 @@ public interface IFavorieRepository
     
     bool Delete(int id);
     
+    bool DeleteByUser(int id);
+    
     bool Update(DbFavorie dbCommentMovie);
 }

@@ -5,6 +5,7 @@ using System.Text;
 using Api;
 using Application.UseCases;
 using Application.UseCases.CommentMovies.UseCaseCommentMovie;
+using Application.UseCases.Favorie.UseCaseCommentMovie;
 using Application.UseCases.RatingMovies.UseCaseRatingMovie;
 using Infrastructure.Ef;
 using Infrastructure.Utils;
@@ -82,6 +83,7 @@ namespace ProjetTi;
             services.AddScoped<IUserRepository, UserRepository>();
             services.AddScoped<IRatingMovieRepository, RatingMovieRepository>();
             services.AddScoped<ICommentMovieRepository, CommentMovieRepository>();
+            services.AddScoped<IFavorieRepository, FavorieRepository>();
             
             services.AddTransient<IJwtAuthentificationManager, JwtAuthentificationManager>();
 
@@ -89,27 +91,33 @@ namespace ProjetTi;
             services.AddScoped<UseCaseFetchAllUsers>();
             services.AddScoped<UseCaseFetchAllRatingMovies>();
             services.AddScoped<UseCaseFetchAllCommentMovies>();
+            services.AddScoped<UseCaseFetchAllFavorie>();
 
             services.AddScoped<UseCaseCreateMovie>();
             services.AddScoped<UseCaseCreateUser>();
             services.AddScoped<UseCaseCreateRatingMovie>();
             services.AddScoped<UseCaseCreateCommentMovie>();
+            services.AddScoped<UseCaseCreateFavorie>();
 
             services.AddScoped<UseCaseFetchMovieById>();
             services.AddScoped<UseCaseFetchUserById>();
             services.AddScoped<UseCaseFetchRatingMovieById>();
             services.AddScoped<UseCaseFetchCommentMovieById>();
+            services.AddScoped<UseCaseFetchFavorieById>();
 
             services.AddScoped<UseCaseDeleteMovie>();
             services.AddScoped<UseCaseDeleteUser>();
             services.AddScoped<UseCaseDeleteRatingMovie>();
             services.AddScoped<UseCaseDeleteCommentMovie>();
             services.AddScoped<UseCaseDeleteCommentMovieByUser>();
+            services.AddScoped<UseCaseDeleteFavorie>();
+            services.AddScoped<UseCaseDeleteFavorieByUser>();
 
             services.AddScoped<UseCaseUpdateMovie>();
             services.AddScoped<UseCaseUpdateUser>();
             services.AddScoped<UseCaseUpdateRatingMovie>();
             services.AddScoped<UseCaseUpdateCommentMovie>();
+            services.AddScoped<UseCaseUpdateFavorie>();
 
             services.AddScoped<UseCaseFetchMovieByName>();
             services.AddScoped<UseCaseFetchByNameUser>();

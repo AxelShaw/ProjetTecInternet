@@ -1,4 +1,5 @@
 ﻿using Application.UseCases.CommentMovies.Dtos;
+using Application.UseCases.Favorie.Dtos;
 using Application.UseCases.Movies.Dtos;
 using Application.UseCases.RatingMovies.Dtos;
 using Application.UseCases.Users.Dtos;
@@ -45,6 +46,12 @@ public class Mapper
             cfg.CreateMap<DbCommentMovie, CommentMovie>();
             cfg.CreateMap<Boolean, DtoOutputCommentMovie>();
             cfg.CreateMap<DtoOutputCommentMovie, CommentMovie>();
+            
+            cfg.CreateMap<Favorie, DtoOutputFavorie>();
+            cfg.CreateMap<DbFavorie, DtoOutputFavorie>();
+            cfg.CreateMap<DbFavorie, Favorie>();
+            cfg.CreateMap<Boolean, DtoOutputFavorie>();
+            cfg.CreateMap<DtoOutputFavorie, Favorie>();
 
         });
         return new AutoMapper.Mapper(config);
