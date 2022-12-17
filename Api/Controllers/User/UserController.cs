@@ -14,15 +14,18 @@ public class UserController : ControllerBase
     private readonly UseCaseFetchUserById _useCaseFetchUserById;
     private readonly UseCaseDeleteUser _useCaseDeleteUser;
     private readonly UseCaseUpdateUser _useCaseUpdateUser;
+    private readonly UseCaseFetchByNameUser _useCaseFetchByNameUser;
 
     public UserController(UseCaseCreateUser useCaseCreateUser, UseCaseFetchAllUsers useCaseFetchAllUsers,
-        UseCaseFetchUserById useCaseFetchUserById, UseCaseDeleteUser useCaseDeleteUser, UseCaseUpdateUser useCaseUpdateUser )
+        UseCaseFetchUserById useCaseFetchUserById, UseCaseDeleteUser useCaseDeleteUser,
+        UseCaseUpdateUser useCaseUpdateUser, UseCaseFetchByNameUser useCaseFetchByNameUser )
     {
         _useCaseCreateUser = useCaseCreateUser;
         _useCaseFetchAllUsers = useCaseFetchAllUsers;
         _useCaseFetchUserById = useCaseFetchUserById;
         _useCaseDeleteUser = useCaseDeleteUser;
         _useCaseUpdateUser = useCaseUpdateUser;
+        _useCaseFetchByNameUser = useCaseFetchByNameUser;
     }
     
     [HttpGet]
@@ -84,5 +87,13 @@ public class UserController : ControllerBase
     public ActionResult Update(DbUser user)
     {
         return _useCaseUpdateUser.Execute(user) ? NoContent() : NotFound();
+    }
+    [HttpGet]
+    [Route("{nickname}")]
+    [ProducesResponseType(StatusCodes.Status200OK)]
+    [ProducesResponseType(StatusCodes.Status404NotFound)]
+    public ActionResult<IEnumerable<DtoOutputUser>> FetchByName(string nickname)
+    {
+        return Ok(_useCaseFetchByNameUser.Execute(nickname));
     }
 }

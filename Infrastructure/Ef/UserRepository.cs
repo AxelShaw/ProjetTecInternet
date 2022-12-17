@@ -84,4 +84,17 @@ public class UserRepository : IUserRepository
             return false;
         }
     }
+    
+    public IEnumerable<DbUser> FetchByName(string nickName)
+    {
+        using var context = _contextProvider.NewContext();
+        var user = context.User.ToList().Where(g => g.nickname.ToLower().Contains(nickName.ToLower()));
+        
+        user = user.Take(5);
+
+        if (user == null)
+            throw new KeyNotFoundException($"User with name {nickName} has not been found");
+
+        return user;
+    }
 }
