@@ -116,6 +116,7 @@ namespace ProjetTi;
             services.AddScoped<UseCaseDeleteUser>();
             services.AddScoped<UseCaseDeleteRatingMovie>();
             services.AddScoped<UseCaseDeleteCommentMovie>();
+            services.AddScoped<UseCaseDeleteCommentMovieById>();
             services.AddScoped<UseCaseDeleteCommentMovieByUser>();
             services.AddScoped<UseCaseDeleteFavorie>();
             services.AddScoped<UseCaseDeleteFavorieByUser>();

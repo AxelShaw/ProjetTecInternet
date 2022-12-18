@@ -14,11 +14,12 @@ public class CommentMovieController : ControllerBase
     private readonly UseCaseDeleteCommentMovie _useCaseDeleteCommentMovie;
     private readonly UseCaseUpdateCommentMovie _useCaseUpdateCommentMovie;
     private readonly UseCaseDeleteCommentMovieByUser _useCaseDeleteCommentMovieByUser;
+    private readonly UseCaseDeleteCommentMovieById _useCaseDeleteCommentMovieById;
 
     public CommentMovieController(UseCaseFetchAllCommentMovies useCaseFetchAllCommentMovies,
         UseCaseCreateCommentMovie useCaseCreateCommentMovie, UseCaseFetchCommentMovieById useCaseFetchCommentMovieById,
         UseCaseDeleteCommentMovie useCaseDeleteCommentMovie, UseCaseUpdateCommentMovie useCaseUpdateCommentMovie,
-        UseCaseDeleteCommentMovieByUser useCaseDeleteCommentMovieByUser)
+        UseCaseDeleteCommentMovieByUser useCaseDeleteCommentMovieByUser, UseCaseDeleteCommentMovieById useCaseDeleteCommentMovieById)
     {
         _useCaseFetchAllCommentMovies = useCaseFetchAllCommentMovies;
         _useCaseCreateCommentMovie = useCaseCreateCommentMovie;
@@ -26,6 +27,7 @@ public class CommentMovieController : ControllerBase
         _useCaseDeleteCommentMovie = useCaseDeleteCommentMovie;
         _useCaseUpdateCommentMovie = useCaseUpdateCommentMovie;
         _useCaseDeleteCommentMovieByUser = useCaseDeleteCommentMovieByUser;
+        _useCaseDeleteCommentMovieById = useCaseDeleteCommentMovieById;
     }
     
     
@@ -90,6 +92,25 @@ public class CommentMovieController : ControllerBase
         try
         {
             return _useCaseDeleteCommentMovieByUser.Execute(id);
+        }
+        catch (KeyNotFoundException e)
+        {
+            return NotFound(new
+            {
+                e.Message
+            });
+        }
+    }
+    
+    [HttpDelete]
+    [Route("id/{id:int}")]
+    [ProducesResponseType(StatusCodes.Status200OK)]
+    [ProducesResponseType(StatusCodes.Status404NotFound)]
+    public ActionResult<DtoOutputCommentMovie>  DeleteById(int id)
+    {
+        try
+        {
+            return _useCaseDeleteCommentMovieById.Execute(id);
         }
         catch (KeyNotFoundException e)
         {
