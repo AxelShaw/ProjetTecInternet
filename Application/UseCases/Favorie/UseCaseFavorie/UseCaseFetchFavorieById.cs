@@ -2,8 +2,7 @@
 using Application.UseCases.Utils;
 using Infrastructure.Ef;
 
-namespace Application.UseCases.Favorie.UseCaseCommentMovie;
-
+namespace Application.UseCases.Favorie.UseCaseFavorie;
 public class UseCaseFetchFavorieById : IUseCaseParameterizedQuery<IEnumerable<DtoOutputFavorie>, int>
 {
     private readonly IFavorieRepository _favorieRepository;

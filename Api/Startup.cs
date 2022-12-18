@@ -4,8 +4,11 @@ using Microsoft.OpenApi.Models;
 using System.Text;
 using Api;
 using Application.UseCases;
+using Application.UseCases.Actu.UseCaseActu;
+using Application.UseCases.Actu.UseCaseCommentMovie;
 using Application.UseCases.CommentMovies.UseCaseCommentMovie;
 using Application.UseCases.Favorie.UseCaseCommentMovie;
+using Application.UseCases.Favorie.UseCaseFavorie;
 using Application.UseCases.RatingMovies.UseCaseRatingMovie;
 using Infrastructure.Ef;
 using Infrastructure.Utils;
@@ -84,6 +87,7 @@ namespace ProjetTi;
             services.AddScoped<IRatingMovieRepository, RatingMovieRepository>();
             services.AddScoped<ICommentMovieRepository, CommentMovieRepository>();
             services.AddScoped<IFavorieRepository, FavorieRepository>();
+            services.AddScoped<IActuRepository, ActuRepository>();
             
             services.AddTransient<IJwtAuthentificationManager, JwtAuthentificationManager>();
 
@@ -92,18 +96,21 @@ namespace ProjetTi;
             services.AddScoped<UseCaseFetchAllRatingMovies>();
             services.AddScoped<UseCaseFetchAllCommentMovies>();
             services.AddScoped<UseCaseFetchAllFavorie>();
+            services.AddScoped<UseCaseFetchAllActu>();
 
             services.AddScoped<UseCaseCreateMovie>();
             services.AddScoped<UseCaseCreateUser>();
             services.AddScoped<UseCaseCreateRatingMovie>();
             services.AddScoped<UseCaseCreateCommentMovie>();
             services.AddScoped<UseCaseCreateFavorie>();
+            services.AddScoped<UseCaseCreateActu>();
 
             services.AddScoped<UseCaseFetchMovieById>();
             services.AddScoped<UseCaseFetchUserById>();
             services.AddScoped<UseCaseFetchRatingMovieById>();
             services.AddScoped<UseCaseFetchCommentMovieById>();
             services.AddScoped<UseCaseFetchFavorieById>();
+            services.AddScoped<UseCaseFetchActuById>();
 
             services.AddScoped<UseCaseDeleteMovie>();
             services.AddScoped<UseCaseDeleteUser>();
@@ -112,12 +119,14 @@ namespace ProjetTi;
             services.AddScoped<UseCaseDeleteCommentMovieByUser>();
             services.AddScoped<UseCaseDeleteFavorie>();
             services.AddScoped<UseCaseDeleteFavorieByUser>();
+            services.AddScoped<UseCaseDeleteActu>();
 
             services.AddScoped<UseCaseUpdateMovie>();
             services.AddScoped<UseCaseUpdateUser>();
             services.AddScoped<UseCaseUpdateRatingMovie>();
             services.AddScoped<UseCaseUpdateCommentMovie>();
             services.AddScoped<UseCaseUpdateFavorie>();
+            services.AddScoped<UseCaseUpdateActu>();
 
             services.AddScoped<UseCaseFetchMovieByName>();
             services.AddScoped<UseCaseFetchByNameUser>();

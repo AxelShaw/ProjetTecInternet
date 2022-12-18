@@ -3,8 +3,7 @@ using Application.UseCases.Utils;
 using Infrastructure.Ef;
 using Infrastructure.Ef.DbEntities;
 
-namespace Application.UseCases.Favorie.UseCaseCommentMovie;
-
+namespace Application.UseCases.Favorie.UseCaseFavorie;
 public class UseCaseUpdateFavorie : IUseCaseParameterizedQueryUpFavorie<DtoOutputFavorie, Domain.Favorie>
 {
     private readonly IFavorieRepository _favorieRepositoryy;

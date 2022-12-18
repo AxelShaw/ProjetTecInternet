@@ -2,20 +2,19 @@
 using Application.UseCases.Utils;
 using Infrastructure.Ef;
 
-namespace Application.UseCases.Favorie.UseCaseCommentMovie;
-
-public class UseCaseDeleteFavorieByUser:  IUseCaseParameterizedQuery<DtoOutputFavorie, int>
+namespace Application.UseCases.Favorie.UseCaseFavorie;
+public class UseCaseDeleteFavorie : IUseCaseParameterizedQuery<DtoOutputFavorie, int>
 {
     private readonly IFavorieRepository _favorieRepository;
 
-    public UseCaseDeleteFavorieByUser(IFavorieRepository favorieRepository)
+    public UseCaseDeleteFavorie(IFavorieRepository favorieRepository)
     {
         _favorieRepository = favorieRepository;
     }
 
     public DtoOutputFavorie Execute(int id)
     {
-        var dbFavorie = _favorieRepository.DeleteByUser(id);
+        var dbFavorie = _favorieRepository.Delete(id);
         return Mapper.GetInstance().Map<DtoOutputFavorie>(dbFavorie);
     }
 }

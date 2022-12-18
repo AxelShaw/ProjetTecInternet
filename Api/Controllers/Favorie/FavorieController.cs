@@ -1,10 +1,11 @@
 ﻿using Application.UseCases.Favorie.Dtos;
-using Application.UseCases.Favorie.UseCaseCommentMovie;
+using Application.UseCases.Favorie.UseCaseFavorie;
 using Infrastructure.Ef.DbEntities;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Api.Controllers.Favorie;
-[ApiController]
+[ApiController
+]
 [Route("api/v1/favorie")]
 public class FavorieController : ControllerBase
 {

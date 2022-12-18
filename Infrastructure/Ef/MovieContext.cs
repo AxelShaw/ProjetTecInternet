@@ -21,6 +21,8 @@ public class MovieContext : DbContext
     public DbSet<DbCommentMovie> CommentMovie { get; set; }
     
     public DbSet<DbFavorie> Favorie { get; set; }
+    
+    public DbSet<DbActu> Actu { get; set; }
 
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
