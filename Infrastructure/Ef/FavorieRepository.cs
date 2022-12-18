@@ -68,6 +68,20 @@ public class FavorieRepository :IFavorieRepository
         }
     }
 
+    public bool DeleteById(int id)
+    {
+        using var context = _contextProvider.NewContext();
+        try
+        {
+            context.Favorie.Where(g => g.IdFav == id).ExecuteDelete();
+            return context.SaveChanges() == 1;
+        }
+        catch (DbUpdateConcurrencyException e)
+        {
+            return false;
+        }
+    }
+
     public bool Update(DbFavorie favorie)
     {
         using var context = _contextProvider.NewContext();

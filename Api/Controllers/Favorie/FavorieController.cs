@@ -15,11 +15,12 @@ public class FavorieController : ControllerBase
     private readonly UseCaseDeleteFavorie _useCaseDeleteFavorie;
     private readonly UseCaseUpdateFavorie _useCaseUpdateFavorie;
     private readonly UseCaseDeleteFavorieByUser _useCaseDeleteFavorieByUser;
+    private readonly UseCaseDeleteFavorieById _useCaseDeleteFavorieById;
 
     public FavorieController(UseCaseFetchAllFavorie useCaseFetchAllFavorie,
         UseCaseCreateFavorie useCaseCreateFavorie, UseCaseFetchFavorieById useCaseFetchFavorieById,
         UseCaseDeleteFavorie useCaseDeleteFavorie, UseCaseUpdateFavorie useCaseUpdateFavorie,
-        UseCaseDeleteFavorieByUser useCaseDeleteFavorieByUser)
+        UseCaseDeleteFavorieByUser useCaseDeleteFavorieByUser, UseCaseDeleteFavorieById useCaseDeleteFavorieById)
     {
         _useCaseFetchAllFavorie = useCaseFetchAllFavorie;
         _useCaseCreateFavorie = useCaseCreateFavorie;
@@ -27,6 +28,7 @@ public class FavorieController : ControllerBase
         _useCaseDeleteFavorie = useCaseDeleteFavorie;
         _useCaseUpdateFavorie = useCaseUpdateFavorie;
         _useCaseDeleteFavorieByUser = useCaseDeleteFavorieByUser;
+        _useCaseDeleteFavorieById = useCaseDeleteFavorieById;
     }
     
     [HttpGet]
@@ -48,7 +50,7 @@ public class FavorieController : ControllerBase
     }
     
     [HttpDelete]
-    [Route("{id:int}")]
+    [Route("movie/{id:int}")]
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
     public ActionResult<DtoOutputFavorie>  Delete(int id)
@@ -56,6 +58,25 @@ public class FavorieController : ControllerBase
         try
         {
             return _useCaseDeleteFavorie.Execute(id);
+        }
+        catch (KeyNotFoundException e)
+        {
+            return NotFound(new
+            {
+                e.Message
+            });
+        }
+    }
+    
+    [HttpDelete]
+    [Route("{id:int}")]
+    [ProducesResponseType(StatusCodes.Status200OK)]
+    [ProducesResponseType(StatusCodes.Status404NotFound)]
+    public ActionResult<DtoOutputFavorie>  DeleteById(int id)
+    {
+        try
+        {
+            return _useCaseDeleteFavorieById.Execute(id);
         }
         catch (KeyNotFoundException e)
         {
