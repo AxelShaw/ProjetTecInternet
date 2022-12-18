@@ -11,6 +11,8 @@ public interface IActuRepository
     DbActu Create(int IdMovieRef, string NewsActu, string Release_actu );
     
     bool Delete(int id);
+    
+    bool DeleteById(int id);
 
     bool Update(DbActu dbActu);
 }

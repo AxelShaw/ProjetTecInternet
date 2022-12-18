@@ -15,17 +15,19 @@ public class ActuController : ControllerBase
     private readonly UseCaseCreateActu _useCaseCreateActu;
     private readonly UseCaseFetchActuById _useCaseFetchActuById;
     private readonly UseCaseDeleteActu _useCaseDeleteActu;
+    private readonly UseCaseDeleteByIdActu _useCaseDeleteByIdActu;
     private readonly UseCaseUpdateActu _useCaseUpdateActu;
 
     public ActuController(UseCaseFetchAllActu useCaseFetchAllActu,
         UseCaseCreateActu useCaseCreateActu, UseCaseFetchActuById useCaseFetchActuById,
-        UseCaseDeleteActu useCaseDeleteActu, UseCaseUpdateActu useCaseUpdateActu)
+        UseCaseDeleteActu useCaseDeleteActu, UseCaseUpdateActu useCaseUpdateActu, UseCaseDeleteByIdActu useCaseDeleteByIdActu)
     {
         _useCaseFetchAllActu = useCaseFetchAllActu;
         _useCaseCreateActu = useCaseCreateActu;
         _useCaseFetchActuById = useCaseFetchActuById;
         _useCaseDeleteActu = useCaseDeleteActu;
         _useCaseUpdateActu = useCaseUpdateActu;
+        _useCaseDeleteByIdActu = useCaseDeleteByIdActu;
     }
     
     [HttpGet]
@@ -55,6 +57,24 @@ public class ActuController : ControllerBase
         try
         {
             return _useCaseDeleteActu.Execute(id);
+        }
+        catch (KeyNotFoundException e)
+        {
+            return NotFound(new
+            {
+                e.Message
+            });
+        }
+    }
+    [HttpDelete]
+    [Route("id/{id:int}")]
+    [ProducesResponseType(StatusCodes.Status200OK)]
+    [ProducesResponseType(StatusCodes.Status404NotFound)]
+    public ActionResult<DtoOutputActu>  DeleteById(int id)
+    {
+        try
+        {
+            return _useCaseDeleteByIdActu.Execute(id);
         }
         catch (KeyNotFoundException e)
         {

@@ -53,6 +53,18 @@ public class ActuRepository :IActuRepository
         {
             return false;
         }
+    }public bool DeleteById(int id)
+    {
+        using var context = _contextProvider.NewContext();
+        try
+        {
+            context.Actu.Where(g => g.IdActu == id).ExecuteDelete();
+            return context.SaveChanges() == 1;
+        }
+        catch (DbUpdateConcurrencyException e)
+        {
+            return false;
+        }
     }
 
     public bool Update(DbActu actu)

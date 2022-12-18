@@ -122,6 +122,7 @@ namespace ProjetTi;
             services.AddScoped<UseCaseDeleteFavorieByUser>();
             services.AddScoped<UseCaseDeleteFavorieById>();
             services.AddScoped<UseCaseDeleteActu>();
+            services.AddScoped<UseCaseDeleteByIdActu>();
 
             services.AddScoped<UseCaseUpdateMovie>();
             services.AddScoped<UseCaseUpdateUser>();
