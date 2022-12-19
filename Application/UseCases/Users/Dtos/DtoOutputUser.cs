@@ -12,5 +12,5 @@ public class DtoOutputUser
     
     public string role { get; set; }
     
-    public string profil_picture { get; set; }
+    public byte[] profil_picture { get; set; }
 }

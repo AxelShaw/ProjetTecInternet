@@ -37,7 +37,7 @@ public class UserRepository : IUserRepository
     }
 
     public DbUser Create(string lastName, string firstName, string mail, string nickName, string password,
-        string role, string profilePic)
+        string role, byte[] profilePic)
     {
         using var context = _contextProvider.NewContext();
         var user = new DbUser
