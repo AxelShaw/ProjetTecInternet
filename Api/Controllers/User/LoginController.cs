@@ -8,6 +8,7 @@ namespace Api.Controllers.User;
 [ApiController]
 [Route("api/v1/login")]
 
+
 public class LoginController : ControllerBase
 {
     private readonly IJwtAuthentificationManager _JwtAuthentificationManager;
@@ -19,7 +20,6 @@ public class LoginController : ControllerBase
     }
     
     [HttpPost]
-    [Route("Login")]
     public IActionResult login([FromBody] DtoInputLoginUser model)
     {
         var Dbuser = _JwtAuthentificationManager.Authenticate(model.mail, model.password);

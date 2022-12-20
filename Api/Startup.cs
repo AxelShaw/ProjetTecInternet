@@ -152,8 +152,15 @@ namespace ProjetTi;
                 app.UseSwagger();
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "JwtApi v1"));
             }
-            
-            app.UseCors("AllowOrigin");
+
+            app.UseCors(options =>
+            {
+                options.SetIsOriginAllowed(origin => true);
+                //options.AllowAnyOrigin();
+                options.AllowAnyHeader();
+                options.AllowAnyMethod();
+                options.AllowCredentials();   
+            });
 
             app.UseHttpsRedirection();
 
