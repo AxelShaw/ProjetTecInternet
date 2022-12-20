@@ -36,9 +36,9 @@ public class LoginController : ControllerBase
             };
             var token = _JwtAuthentificationManager.GenerateToken(_config["Jwt:Key"], claims);
             
-            Response.Cookies.Append("cookie", token, new CookieOptions()
+            Response.Cookies.Append("UserInfo", token, new CookieOptions()
             {
-                HttpOnly = true,
+                HttpOnly = false,
                 Secure = true
             });
             
