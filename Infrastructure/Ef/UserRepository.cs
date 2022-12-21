@@ -97,4 +97,15 @@ public class UserRepository : IUserRepository
 
         return user;
     }
+    public bool IsPresentMail(string mail)
+    {
+        using var context = _contextProvider.NewContext();
+
+        if (context.User.Any(g => g.mail.ToLower() == mail.ToLower()))
+        {
+            return true;
+        }
+
+        return false;
+    }
 }
