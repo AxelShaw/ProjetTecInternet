@@ -28,10 +28,6 @@ public class LoginController : ControllerBase
             var claims = new List<Claim>
             {
                 new Claim("id", Dbuser.IdUser.ToString()),
-                new Claim("FirstName", Dbuser.first_name),
-                new Claim("LastName", Dbuser.last_name),
-                new Claim("Adresse mail", Dbuser.mail),
-                new Claim("Password", Dbuser.password),
                 new Claim("Role", Dbuser.role),
             };
             var token = _JwtAuthentificationManager.GenerateToken(_config["Jwt:Key"], claims);
