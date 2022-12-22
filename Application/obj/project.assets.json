@@ -3366,32 +3366,34 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\shaw\\.nuget\\packages\\": {}
+    "C:\\Users\\maadi\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\shaw\\Desktop\\Projet ti\\rider\\ProjetTecInternetRider\\Application\\Application.csproj",
+      "projectUniqueName": "C:\\Users\\maadi\\Desktop\\Bloc 3\\Technologie Internet\\Rider\\Projet(Partie Back-end)\\ProjetTecInternetRider\\Application\\Application.csproj",
       "projectName": "Application",
-      "projectPath": "C:\\Users\\shaw\\Desktop\\Projet ti\\rider\\ProjetTecInternetRider\\Application\\Application.csproj",
-      "packagesPath": "C:\\Users\\shaw\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\shaw\\Desktop\\Projet ti\\rider\\ProjetTecInternetRider\\Application\\obj\\",
+      "projectPath": "C:\\Users\\maadi\\Desktop\\Bloc 3\\Technologie Internet\\Rider\\Projet(Partie Back-end)\\ProjetTecInternetRider\\Application\\Application.csproj",
+      "packagesPath": "C:\\Users\\maadi\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\maadi\\Desktop\\Bloc 3\\Technologie Internet\\Rider\\Projet(Partie Back-end)\\ProjetTecInternetRider\\Application\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\shaw\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\maadi\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net6.0"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\shaw\\Desktop\\Projet ti\\rider\\ProjetTecInternetRider\\Infrastructure\\Infrastructure.csproj": {
-              "projectPath": "C:\\Users\\shaw\\Desktop\\Projet ti\\rider\\ProjetTecInternetRider\\Infrastructure\\Infrastructure.csproj"
+            "C:\\Users\\maadi\\Desktop\\Bloc 3\\Technologie Internet\\Rider\\Projet(Partie Back-end)\\ProjetTecInternetRider\\Infrastructure\\Infrastructure.csproj": {
+              "projectPath": "C:\\Users\\maadi\\Desktop\\Bloc 3\\Technologie Internet\\Rider\\Projet(Partie Back-end)\\ProjetTecInternetRider\\Infrastructure\\Infrastructure.csproj"
             }
           }
         }
