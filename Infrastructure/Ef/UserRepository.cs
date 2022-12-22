@@ -20,13 +20,14 @@ public class UserRepository : IUserRepository
         throw new NotImplementedException();
     }
 
-
+    //get all user
     public IEnumerable<DbUser> FetchAll()
     {
         using var context = _contextProvider.NewContext();
         return context.User.ToList();
     }
 
+    //get a user by id
     public DbUser FetchById(int id)
     {
         using var context = _contextProvider.NewContext();
@@ -38,11 +39,12 @@ public class UserRepository : IUserRepository
         return user;
     }
 
+    //create a new user
     public DbUser Create(string lastName, string firstName, string mail, string nickName, string password,
         string role, byte[] profilePic)
     {
         using var context = _contextProvider.NewContext();
-
+    
         var allUser = context.User.ToList().Where(g => g.mail.ToLower().Contains(mail.ToLower()));
 
         if (allUser.ToList().Count > 0)
@@ -50,8 +52,9 @@ public class UserRepository : IUserRepository
             return null;
         }
         
+        //set encryption method with sha256
         SHA256 sha256Hash = SHA256.Create();
-        
+        //get a hash
         var passwordHash = HashedPassword.GetHash(sha256Hash, password);
         var user = new DbUser
         {
@@ -68,6 +71,7 @@ public class UserRepository : IUserRepository
         return user;
     }
 
+    // delete a user by id
     public bool Delete(int id)
     {
         using var context = _contextProvider.NewContext();
@@ -82,6 +86,7 @@ public class UserRepository : IUserRepository
         }
     }
 
+    //update a user 
     public bool Update(DbUser user)
     {
         using var context = _contextProvider.NewContext();
@@ -98,6 +103,7 @@ public class UserRepository : IUserRepository
         }
     }
     
+    //get 5 users by name 
     public IEnumerable<DbUser> FetchByName(string nickName)
     {
         using var context = _contextProvider.NewContext();

@@ -13,6 +13,7 @@ public class UseCaseFetchRatingMovieById : IUseCaseParameterizedQuery<DtoOutputR
         _ratingMovieRepository = ratingMovieRepository;
     }
 
+    //execute FetchAll by id rating movie method
     public DtoOutputRatingMovie Execute(int id)
     {
         var dbRatingMovie = _ratingMovieRepository.FetchById(id);

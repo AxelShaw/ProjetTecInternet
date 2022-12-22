@@ -31,12 +31,14 @@ public class FavorieController : ControllerBase
         _useCaseDeleteFavorieById = useCaseDeleteFavorieById;
     }
     
+    //execute use case _useCaseFetchAllFavorie
     [HttpGet]
     public ActionResult<IEnumerable<DtoOutputFavorie>> FetchAll()
     {
         return Ok(_useCaseFetchAllFavorie.Execute());
     }
     
+    //execute use case _useCaseCreateFavorie
     [HttpPost]
     [ProducesResponseType(StatusCodes.Status201Created)]
     public ActionResult<DtoOutputFavorie> Create(DtoInputCreateFavorie dto)
@@ -49,6 +51,8 @@ public class FavorieController : ControllerBase
         );
     }
     
+    
+    //execute use case _useCaseDeleteFavorie
     [HttpDelete]
     [Route("movie/{id:int}")]
     [ProducesResponseType(StatusCodes.Status200OK)]
@@ -68,6 +72,7 @@ public class FavorieController : ControllerBase
         }
     }
     
+    //execute use case _useCaseDeleteFavorieById
     [HttpDelete]
     [Route("{id:int}")]
     [ProducesResponseType(StatusCodes.Status200OK)]
@@ -87,6 +92,7 @@ public class FavorieController : ControllerBase
         }
     }
     
+    //execute use case _useCaseFetchFavorieById
     [HttpGet]
     [Route("{id:int}")]
     [ProducesResponseType(StatusCodes.Status200OK)]
@@ -96,6 +102,7 @@ public class FavorieController : ControllerBase
         return Ok(_useCaseFetchFavorieById.Execute(id));
     }
     
+    //execute use case _useCaseUpdateFavorie
     [HttpPut]
     [ProducesResponseType(StatusCodes.Status204NoContent)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
@@ -104,6 +111,7 @@ public class FavorieController : ControllerBase
         return _useCaseUpdateFavorie.Execute(favorie) ? NoContent() : NotFound();
     }
     
+    //execute use case _useCaseDeleteFavorieByUser
     [HttpDelete]
     [Route("deletebyuser/{id:int}")]
     [ProducesResponseType(StatusCodes.Status200OK)]

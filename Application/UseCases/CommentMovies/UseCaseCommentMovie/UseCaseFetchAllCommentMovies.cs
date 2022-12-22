@@ -13,6 +13,7 @@ public class UseCaseFetchAllCommentMovies : IUseCaseQuery<IEnumerable<DtoOutputC
         _commentMovieRepository = commentMovieRepository;
     }
 
+    //execute comment movie get all method 
     public IEnumerable<DtoOutputCommentMovie> Execute()
     {
         var dbCommentMovie = _commentMovieRepository.FetchAll();

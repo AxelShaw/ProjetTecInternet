@@ -18,7 +18,8 @@ public class Mapper
     {
         return _instance ??= CreateMapper();
     }
-
+    
+    //map for use case
     private static AutoMapper.Mapper CreateMapper()
     {
         var config = new MapperConfiguration(cfg =>

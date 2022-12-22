@@ -13,7 +13,7 @@ public class UseCaseCreateActu : IUseCaseWriter<DtoOutputActu, DtoInputCreateAct
         _actuRepository = actuRepository;
     }
     
-    
+    //execute news create method with DtoInputCreateActu to dtoOutput
     public DtoOutputActu Execute(DtoInputCreateActu input)
     {
         var dbActu = _actuRepository.Create(input.IdMovieRef,input.NewsActu,input.Release_actu);

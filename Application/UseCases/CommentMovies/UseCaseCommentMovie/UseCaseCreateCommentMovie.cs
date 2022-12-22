@@ -13,7 +13,7 @@ public class UseCaseCreateCommentMovie : IUseCaseWriter<DtoOutputCommentMovie, D
         _commentMovieRepository = commentMovieRepository;
     }
     
-    
+    //execute create commentmovie method with dtoinputcreatemovie to output
     public DtoOutputCommentMovie Execute(DtoInputCreateCommentMovie input)
     {
         var dbCommentMovie = _commentMovieRepository.Create(input.Rating, input.CommentText,input.IdMovieRef,input.IdUserRef);

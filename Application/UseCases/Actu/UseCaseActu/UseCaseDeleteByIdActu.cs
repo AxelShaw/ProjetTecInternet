@@ -12,7 +12,7 @@ public class UseCaseDeleteByIdActu : IUseCaseParameterizedQuery<DtoOutputActu, i
     {
         _actuRepository = actuRepository;
     }
-
+    //execute news delete by id movie method with id to dtoOutput
     public DtoOutputActu Execute(int id)
     {
         var dbActu = _actuRepository.DeleteById(id);

@@ -13,7 +13,7 @@ public class UseCaseCreateMovie : IUseCaseWriter<DtoOutputMovie, DtoInputCreateM
         _movieRepository = movieRepository;
     }
     
-    
+    //execute movie create method
     public DtoOutputMovie Execute(DtoInputCreateMovie input)
     {
         var dbMovie = _movieRepository.Create(input.NameMovie, input.RuntimeMinute, input.MovieType, input.DescriptionMovie, input.ImageMovie, input.FilmGenre, input.Director, input.Release_movie);

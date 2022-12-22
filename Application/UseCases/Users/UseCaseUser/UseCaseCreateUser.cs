@@ -14,7 +14,7 @@ public class UseCaseCreateUser : IUseCaseWriter<DtoOutputUser, DtoInputCreateUse
         _userRepository = userRepository;
     }
     
-    
+    //execute user create method
     public DtoOutputUser Execute(DtoInputCreateUser input)
     {
         var dbUser = _userRepository.Create(input.last_name, input.first_name, input.mail, input.nickname,

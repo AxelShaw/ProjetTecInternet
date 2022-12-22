@@ -14,6 +14,7 @@ public class UseCaseFetchAllUsers : IUseCaseQuery<IEnumerable<DtoOutputUser>>
         _userRepository = userRepository;
     }
 
+    //execute user get all method
     public IEnumerable<DtoOutputUser> Execute()
     {
         var dbUsers = _userRepository.FetchAll();

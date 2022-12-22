@@ -13,7 +13,7 @@ public class UseCaseCreateFavorie : IUseCaseWriter<DtoOutputFavorie, DtoInputCre
         _favorieRepository = favorieRepository;
     }
     
-    
+    //execute favori create method
     public DtoOutputFavorie Execute(DtoInputCreateFavorie input)
     {
         var dbFavorie = _favorieRepository.Create(input.IdMovieRef,input.IdUserRef);

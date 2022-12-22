@@ -12,7 +12,7 @@ public class UseCaseFetchCommentMovieById : IUseCaseParameterizedQuery<IEnumerab
     {
         _commentMovieRepository = commentMovieRepository;
     }
-
+    //execute commentmovie get by id method with id
     public IEnumerable<DtoOutputCommentMovie> Execute(int id)
     {
         var dbCommentMovie = _commentMovieRepository.FetchById(id);

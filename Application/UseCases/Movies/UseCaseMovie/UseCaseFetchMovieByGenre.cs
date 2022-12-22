@@ -12,7 +12,7 @@ public class UseCaseFetchMovieByGenre :IUseCaseParameterizedQuery<IEnumerable<Dt
     {
         _movieRepository = movieRepository;
     }
-
+    //execute movie get by genre method
     public IEnumerable<DtoOutputMovie> Execute(string genre)
     {
         var dbMovie = _movieRepository.FetchByGenre(genre);

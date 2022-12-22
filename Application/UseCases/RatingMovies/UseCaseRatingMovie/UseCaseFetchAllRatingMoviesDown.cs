@@ -13,6 +13,7 @@ public class UseCaseFetchAllRatingMoviesDown : IUseCaseQuery<IEnumerable<DtoOutp
         _ratingMovieRepository = ratingMovieRepository;
     }
 
+    //execute ratingmovie FetchAllRatingMoviesDown method
     public IEnumerable<DtoOutputRatingMovie> Execute()
     {
         var dbRatingMovie = _ratingMovieRepository.FetchAllDown();

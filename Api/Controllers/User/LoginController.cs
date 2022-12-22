@@ -19,6 +19,7 @@ public class LoginController : ControllerBase
         _config = config;
     }
     
+    //send a token if user information are correct
     [HttpPost]
     public IActionResult login([FromBody] DtoInputLoginUser model)
     {
@@ -30,6 +31,7 @@ public class LoginController : ControllerBase
                 new Claim("id", Dbuser.IdUser.ToString()),
                 new Claim("Role", Dbuser.role),
             };
+            //generate a token
             var token = _JwtAuthentificationManager.GenerateToken(_config["Jwt:Key"], claims);
             
             Response.Cookies.Append("UserInfo", token, new CookieOptions()

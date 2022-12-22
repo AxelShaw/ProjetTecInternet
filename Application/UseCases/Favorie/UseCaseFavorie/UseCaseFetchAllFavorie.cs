@@ -11,7 +11,7 @@ public class UseCaseFetchAllFavorie : IUseCaseQuery<IEnumerable<DtoOutputFavorie
     {
         _favorieRepository = favorieRepository;
     }
-
+    //execute favori get all method
     public IEnumerable<DtoOutputFavorie> Execute()
     {
         var dbFavories = _favorieRepository.FetchAll();

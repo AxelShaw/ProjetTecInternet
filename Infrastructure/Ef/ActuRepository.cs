@@ -13,20 +13,21 @@ public class ActuRepository :IActuRepository
         _contextProvider = contextProvider;
     }
 
-
+    //get all news 
     public IEnumerable<DbActu> FetchAll()
     {
         using var context = _contextProvider.NewContext();
         return context.Actu.ToList();
     }
-
+    
+    //get by id a news
     public IEnumerable<DbActu> FetchById(int id)
     {
         using var context = _contextProvider.NewContext();
         return context.Actu.ToList().Where(g => g.IdMovieRef == id);
     }
 
-
+    //create a news 
     public DbActu Create(int IdMovieRef, string NewsActu, string Release_actu )
     {
         using var context = _contextProvider.NewContext();
@@ -41,6 +42,7 @@ public class ActuRepository :IActuRepository
         return actu;
     }
 
+    //delete a news
     public bool Delete(int id)
     {
         using var context = _contextProvider.NewContext();
@@ -53,7 +55,10 @@ public class ActuRepository :IActuRepository
         {
             return false;
         }
-    }public bool DeleteById(int id)
+        
+    }
+    //delete by id news
+    public bool DeleteById(int id)
     {
         using var context = _contextProvider.NewContext();
         try
@@ -67,6 +72,7 @@ public class ActuRepository :IActuRepository
         }
     }
 
+    //update a news
     public bool Update(DbActu actu)
     {
         using var context = _contextProvider.NewContext();

@@ -30,13 +30,14 @@ public class CommentMovieController : ControllerBase
         _useCaseDeleteCommentMovieById = useCaseDeleteCommentMovieById;
     }
     
-    
+    //execute use case _useCaseFetchAllCommentMovies
     [HttpGet]
     public ActionResult<IEnumerable<DtoOutputCommentMovie>> FetchAll()
     {
         return Ok(_useCaseFetchAllCommentMovies.Execute());
     }
     
+    //execute use case _useCaseCreateCommentMovie
     [HttpPost]
     [ProducesResponseType(StatusCodes.Status201Created)]
     public ActionResult<DtoOutputCommentMovie> Create(DtoInputCreateCommentMovie dto)
@@ -48,6 +49,7 @@ public class CommentMovieController : ControllerBase
             output
         );
     }
+    //execute use case _useCaseDeleteCommentMovie
     [HttpDelete]
     [Route("{id:int}")]
     [ProducesResponseType(StatusCodes.Status200OK)]
@@ -67,6 +69,7 @@ public class CommentMovieController : ControllerBase
         }
     }
     
+    //execute use case _useCaseFetchCommentMovieById
     [HttpGet]
     [Route("{id:int}")]
     [ProducesResponseType(StatusCodes.Status200OK)]
@@ -76,6 +79,7 @@ public class CommentMovieController : ControllerBase
         return Ok(_useCaseFetchCommentMovieById.Execute(id));
     }
     
+    //execute use case _useCaseUpdateCommentMovie
     [HttpPut]
     [ProducesResponseType(StatusCodes.Status204NoContent)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
@@ -83,6 +87,8 @@ public class CommentMovieController : ControllerBase
     {
         return _useCaseUpdateCommentMovie.Execute(commentMovie) ? NoContent() : NotFound();
     }
+    
+    //execute use case _useCaseDeleteCommentMovieByUser
     [HttpDelete]
     [Route("deletebyuser/{id:int}")]
     [ProducesResponseType(StatusCodes.Status200OK)]
@@ -102,6 +108,7 @@ public class CommentMovieController : ControllerBase
         }
     }
     
+    //execute use case _useCaseDeleteCommentMovieById
     [HttpDelete]
     [Route("id/{id:int}")]
     [ProducesResponseType(StatusCodes.Status200OK)]

@@ -13,13 +13,14 @@ public class CommentMovieRepository :ICommentMovieRepository
         _contextProvider = contextProvider;
     }
 
-
+    //get all comments 
     public IEnumerable<DbCommentMovie> FetchAll()
     {
         using var context = _contextProvider.NewContext();
         return context.CommentMovie.ToList();
     }
 
+    //get 1 comments by ID
     public IEnumerable<DbCommentMovie> FetchById(int id)
     {
         using var context = _contextProvider.NewContext();
@@ -27,6 +28,7 @@ public class CommentMovieRepository :ICommentMovieRepository
     }
 
 
+    //create a comments
     public DbCommentMovie Create(int rating, string commentText, int IdMovieRef, int IdUserRef )
     {
         using var context = _contextProvider.NewContext();
@@ -42,6 +44,7 @@ public class CommentMovieRepository :ICommentMovieRepository
         return commentMovie;
     }
 
+    //delete by id a comment
     public bool Delete(int id)
     {
         using var context = _contextProvider.NewContext();
@@ -56,6 +59,7 @@ public class CommentMovieRepository :ICommentMovieRepository
         }
     }
 
+    //update a comment
     public bool Update(DbCommentMovie commentMovie)
     {
         using var context = _contextProvider.NewContext();
@@ -71,6 +75,8 @@ public class CommentMovieRepository :ICommentMovieRepository
             return false;
         }
     }
+    
+    //delete a comment by user 
     public bool DeleteByUser(int id)
     {
         using var context = _contextProvider.NewContext();
@@ -85,6 +91,7 @@ public class CommentMovieRepository :ICommentMovieRepository
         }
     }
 
+    //delete a comment by movie
     public bool DeleteById(int id)
     {
         using var context = _contextProvider.NewContext();

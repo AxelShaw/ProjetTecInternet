@@ -11,7 +11,7 @@ public class UseCaseFetchFavorieById : IUseCaseParameterizedQuery<IEnumerable<Dt
     {
         _favorieRepository = favorieRepository;
     }
-
+    //execute favori get by id method
     public IEnumerable<DtoOutputFavorie> Execute(int id)
     {
         var dbFavorie = _favorieRepository.FetchById(id);

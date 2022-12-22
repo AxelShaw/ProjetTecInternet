@@ -12,6 +12,7 @@ public class UseCaseDeleteFavorie : IUseCaseParameterizedQuery<DtoOutputFavorie,
         _favorieRepository = favorieRepository;
     }
 
+    //execute favori delete by id method
     public DtoOutputFavorie Execute(int id)
     {
         var dbFavorie = _favorieRepository.Delete(id);

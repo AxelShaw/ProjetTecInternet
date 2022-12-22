@@ -33,40 +33,41 @@ public class RatingMovieController : ControllerBase
         _useCaseFetchAllRatingMoviesDownHome = useCaseFetchAllRatingMoviesDownHome;
     }
     
+    //execute use case _useCaseFetchAllRatingMovies
     [HttpGet]
     public ActionResult<IEnumerable<DtoOutputRatingMovie>> FetchAll()
     {
         return Ok(_useCaseFetchAllRatingMovies.Execute());
     }
-    
+    //execute use case _useCaseFetchAllRatingMoviesDown
     [HttpGet]
     [Route("Down")]
     public ActionResult<IEnumerable<DtoOutputRatingMovie>> FetchAllDown()
     {
         return Ok(_useCaseFetchAllRatingMoviesDown.Execute());
     }
-    
+    //execute use case _useCaseFetchAllRatingMoviesTop
     [HttpGet]
     [Route("Top")]
     public ActionResult<IEnumerable<DtoOutputRatingMovie>> FetchAllTop()
     {
         return Ok(_useCaseFetchAllRatingMoviesTop.Execute());
     }
-    
+    //execute use case _useCaseFetchAllRatingMoviesDownHome
     [HttpGet]
     [Route("DownHome")]
     public ActionResult<IEnumerable<DtoOutputRatingMovie>> FetchAllDownHome()
     {
         return Ok(_useCaseFetchAllRatingMoviesDownHome.Execute());
     }
-    
+    //execute use case _useCaseFetchAllRatingMoviesTopHome
     [HttpGet]
     [Route("TopHome")]
     public ActionResult<IEnumerable<DtoOutputRatingMovie>> FetchAllTopHome()
     {
         return Ok(_useCaseFetchAllRatingMoviesTopHome.Execute());
     }
-    
+    //execute use case _useCaseCreateRatingMovie
     [HttpPost]
     [ProducesResponseType(StatusCodes.Status201Created)]
     public ActionResult<DtoOutputRatingMovie> Create(DtoInputCreateRatingMovie dto)
@@ -78,6 +79,8 @@ public class RatingMovieController : ControllerBase
             output
         );
     }
+    //execute use case _useCaseDeleteRatingMovie
+    //execute use case _useCaseDeleteRatingMovie
     [HttpDelete]
     [Route("{id:int}")]
     [ProducesResponseType(StatusCodes.Status200OK)]
@@ -96,7 +99,7 @@ public class RatingMovieController : ControllerBase
             });
         }
     }
-    
+    //execute use case _useCaseFetchRatingMovieById
     [HttpGet]
     [Route("{id:int}")]
     [ProducesResponseType(StatusCodes.Status200OK)]
@@ -115,7 +118,7 @@ public class RatingMovieController : ControllerBase
             });
         }
     }
-    
+    //execute use case _useCaseUpdateRatingMovie
     [HttpPut]
     [ProducesResponseType(StatusCodes.Status204NoContent)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]

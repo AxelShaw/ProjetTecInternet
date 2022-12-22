@@ -11,6 +11,7 @@ public class ConnectionStringProvider : IConnectionStringProvider
         _configuration = configuration;
     }
     
+    //get  connection string in appsettings.Development.json
     public string Get(string key)
     {
         return _configuration.GetConnectionString(key);

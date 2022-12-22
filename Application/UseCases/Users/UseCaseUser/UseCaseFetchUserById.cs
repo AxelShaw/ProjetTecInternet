@@ -13,6 +13,7 @@ public class UseCaseFetchUserById: IUseCaseParameterizedQuery<DtoOutputUser, int
         _userRepository = userRepository;
     }
 
+    //execute user get by id method
     public DtoOutputUser Execute(int id)
     {
         var dbUser = _userRepository.FetchById(id);

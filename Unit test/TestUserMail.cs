@@ -4,6 +4,7 @@ using NUnit.Framework;
 
 namespace Unit_test;
 
+//test for mail controller
 public class TestMailcontroller
 {
     [Test]

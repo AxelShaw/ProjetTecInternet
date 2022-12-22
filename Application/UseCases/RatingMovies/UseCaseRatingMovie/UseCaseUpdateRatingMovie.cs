@@ -14,7 +14,7 @@ public class UseCaseUpdateRatingMovie : IUseCaseParameterizedQueryUpRatingMovie<
     {
         _ratingMovieRepository = ratingMovieRepository;
     }
-
+    //execute update rating movie method
     public bool Execute(DbRatingMovie ratingMovie)
     {
         var dbRatingMovie = _ratingMovieRepository.Update(ratingMovie);

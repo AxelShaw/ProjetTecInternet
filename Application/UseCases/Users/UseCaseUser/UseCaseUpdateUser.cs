@@ -15,6 +15,7 @@ public class UseCaseUpdateUser : IUseCaseParameterizedQueryUpUser<DtoOutputUser,
         _userRepository = userRepository;
     }
 
+    //execute user update method
     public bool Execute(DbUser user)
     {
         var dbUser = _userRepository.Update(user);

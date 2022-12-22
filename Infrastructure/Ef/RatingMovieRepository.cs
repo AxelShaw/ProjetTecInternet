@@ -13,13 +13,14 @@ public class RatingMovieRepository : IRatingMovieRepository
         _contextProvider = contextProvider;
     }
 
-
+    //get all rating movie
     public IEnumerable<DbRatingMovie> FetchAll()
     {
         using var context = _contextProvider.NewContext();
         return context.RatingMovie.ToList();
     }
 
+    //get a rating movie by id movie
     public DbRatingMovie FetchById(int id)
     {
         using var context = _contextProvider.NewContext();
@@ -31,6 +32,7 @@ public class RatingMovieRepository : IRatingMovieRepository
         return ratingMovie;
     }
 
+    //create a rating movie
     public DbRatingMovie Create(decimal average_rating, int numVote, int movieRefId )
     {
         using var context = _contextProvider.NewContext();
@@ -45,6 +47,7 @@ public class RatingMovieRepository : IRatingMovieRepository
         return ratingMovie;
     }
 
+    //delete a rating movie by id
     public bool Delete(int id)
     {
         using var context = _contextProvider.NewContext();
@@ -59,6 +62,7 @@ public class RatingMovieRepository : IRatingMovieRepository
         }
     }
 
+    //update a rating movie
     public bool Update(DbRatingMovie ratingMovie)
     {
         using var context = _contextProvider.NewContext();
@@ -75,6 +79,7 @@ public class RatingMovieRepository : IRatingMovieRepository
         }
     }
     
+    //get a rating movie worst to best
     public IEnumerable<DbRatingMovie> FetchAllDown()
     {
         using var context = _contextProvider.NewContext();
@@ -85,6 +90,7 @@ public class RatingMovieRepository : IRatingMovieRepository
         return rating;
     }
 
+    //get a rating movie best to worst for home
     public IEnumerable<DbRatingMovie> FetchAllTopHome()
     {
         using var context = _contextProvider.NewContext();
@@ -93,6 +99,7 @@ public class RatingMovieRepository : IRatingMovieRepository
         return rating;
     }
 
+    //get a rating movie worst to best for home
     public IEnumerable<DbRatingMovie> FetchAllDownHome()
     {
         using var context = _contextProvider.NewContext();
@@ -100,6 +107,7 @@ public class RatingMovieRepository : IRatingMovieRepository
         return rating;
     }
 
+    //get a rating movie best to worst
     public IEnumerable<DbRatingMovie> FetchAllTop()
     {
         using var context = _contextProvider.NewContext();

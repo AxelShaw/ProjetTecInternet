@@ -30,12 +30,15 @@ public class MovieController : ControllerBase
         _useCaseFetchMovieByGenre = useCaseFetchMovieByGenre;
     }
     
+    
+    //execute use case _useCaseFetchAllMovies
     [HttpGet]
     public ActionResult<IEnumerable<DtoOutputMovie>> FetchAll()
     {
         return Ok(_useCaseFetchAllMovies.Execute());
     }
     
+    //execute use case _useCaseCreateMovie
     [HttpPost]
     [ProducesResponseType(StatusCodes.Status201Created)]
     public ActionResult<DtoOutputMovie> Create(DtoInputCreateMovie dto)
@@ -47,6 +50,8 @@ public class MovieController : ControllerBase
             output
         );
     }
+    
+    //execute use case _useCaseDeleteMovie
     [HttpDelete]
     [Route("{id:int}")]
     [ProducesResponseType(StatusCodes.Status200OK)]
@@ -66,6 +71,7 @@ public class MovieController : ControllerBase
         }
     }
     
+    //execute use case _useCaseFetchMovieById
     [HttpGet]
     [Route("{id:int}")]
     [ProducesResponseType(StatusCodes.Status200OK)]
@@ -85,6 +91,7 @@ public class MovieController : ControllerBase
         }
     }
     
+    //execute use case _useCaseFetchMovieByName
     [HttpGet]
     [Route("{name}")]
     [ProducesResponseType(StatusCodes.Status200OK)]
@@ -94,6 +101,7 @@ public class MovieController : ControllerBase
         return Ok(_useCaseFetchMovieByName.Execute(name));
     }
     
+    //execute use case _useCaseFetchMovieByGenre
     [HttpGet]
     [Route("genre/{genre}")]
     [ProducesResponseType(StatusCodes.Status200OK)]
@@ -104,7 +112,7 @@ public class MovieController : ControllerBase
     }
     
 
-    
+    //execute use case_useCaseUpdateMovie
     [HttpPut]
     [ProducesResponseType(StatusCodes.Status204NoContent)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]

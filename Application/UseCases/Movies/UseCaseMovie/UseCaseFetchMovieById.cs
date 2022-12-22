@@ -14,6 +14,7 @@ public class UseCaseFetchMovieById: IUseCaseParameterizedQuery<DtoOutputMovie, i
         _movieRepository = movieRepository;
     }
 
+    //execute movie get by id method
     public DtoOutputMovie Execute(int id)
     {
         var dbMovie = _movieRepository.FetchById(id);

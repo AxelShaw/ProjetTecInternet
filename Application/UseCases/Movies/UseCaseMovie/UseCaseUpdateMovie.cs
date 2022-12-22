@@ -14,7 +14,8 @@ public class UseCaseUpdateMovie : IUseCaseParameterizedQueryUp<DtoOutputMovie, M
     {
         _movieRepository = movieRepository;
     }
-
+    
+    //execute ratingmovie create method
     public bool Execute(DbMovie movie)
     {
         var dbMovie = _movieRepository.Update(movie);

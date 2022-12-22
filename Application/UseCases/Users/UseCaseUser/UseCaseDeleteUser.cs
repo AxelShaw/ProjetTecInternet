@@ -13,6 +13,7 @@ public class UseCaseDeleteUser : IUseCaseParameterizedQuery<DtoOutputUser, int>
         _userRepository = userRepository;
     }
 
+    //execute user delete by id method
     public DtoOutputUser Execute(int id)
     {
         var dbUser = _userRepository.Delete(id);

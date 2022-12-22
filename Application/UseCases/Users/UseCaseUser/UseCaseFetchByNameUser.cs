@@ -14,6 +14,7 @@ public class UseCaseFetchByNameUser :IUseCaseParameterizedQuery<IEnumerable<DtoO
         _userRepository = userRepository;
     }
 
+    //execute user get by name method
     public IEnumerable<DtoOutputUser> Execute(string nickname)
     {
         var dbUser = _userRepository.FetchByName(nickname);

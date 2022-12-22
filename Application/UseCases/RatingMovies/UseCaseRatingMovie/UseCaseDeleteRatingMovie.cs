@@ -13,6 +13,7 @@ public class UseCaseDeleteRatingMovie: IUseCaseParameterizedQuery<DtoOutputRatin
         _ratingMovieRepository = ratingMovieRepository;
     }
 
+    //execute ratingmovie delete by id method
     public DtoOutputRatingMovie Execute(int id)
     {
         var dbRatingMovie = _ratingMovieRepository.Delete(id);

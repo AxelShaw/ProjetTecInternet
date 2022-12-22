@@ -18,13 +18,13 @@ public class MovieRepository : IMovieRepository
         _contextProvider = contextProvider;
     }
 
-
+    //get all movie 
     public IEnumerable<DbMovie> FetchAll()
     {
         using var context = _contextProvider.NewContext();
         return context.Movie.ToList();
     }
-
+    //get a movie by id
     public DbMovie FetchById(int id)
     {
         using var context = _contextProvider.NewContext();
@@ -35,6 +35,8 @@ public class MovieRepository : IMovieRepository
 
         return movie;
     }
+    
+    //get 5 movies with a name
     public IEnumerable<DbMovie> FetchByName(string name)
     {
         using var context = _contextProvider.NewContext();
@@ -48,6 +50,7 @@ public class MovieRepository : IMovieRepository
         return movie;
     }
     
+    //get a movie by genre
     public IEnumerable<DbMovie> FetchByGenre(string genre)
     {
         using var context = _contextProvider.NewContext();
@@ -61,6 +64,7 @@ public class MovieRepository : IMovieRepository
         return movie;
     }
 
+    //create a new movie
     public DbMovie Create(string name, int minute, string type, string description, byte[] image, string genre,
         string director, string release)
     {
@@ -81,6 +85,7 @@ public class MovieRepository : IMovieRepository
         return movie;
     }
 
+    //delete movie by id
     public bool Delete(int id)
     {
         using var context = _contextProvider.NewContext();
@@ -95,6 +100,7 @@ public class MovieRepository : IMovieRepository
         }
     }
 
+    //update a movie
     public bool Update(DbMovie movie)
     {
         using var context = _contextProvider.NewContext();

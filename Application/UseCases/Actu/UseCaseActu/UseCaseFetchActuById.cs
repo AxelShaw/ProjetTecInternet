@@ -12,7 +12,7 @@ public class UseCaseFetchActuById : IUseCaseParameterizedQuery<IEnumerable<DtoOu
     {
         _actuRepository = actuRepository;
     }
-
+    //execute news get by Id method with id to dtoOutput
     public IEnumerable<DtoOutputActu> Execute(int id)
     {
         var dbActu = _actuRepository.FetchById(id);

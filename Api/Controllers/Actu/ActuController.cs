@@ -30,12 +30,14 @@ public class ActuController : ControllerBase
         _useCaseDeleteByIdActu = useCaseDeleteByIdActu;
     }
     
+    //execute use case _useCaseFetchAllActu
     [HttpGet]
     public ActionResult<IEnumerable<DtoOutputActu>> FetchAll()
     {
         return Ok(_useCaseFetchAllActu.Execute());
     }
     
+    //execute use case _useCaseCreateActu
     [HttpPost]
     [ProducesResponseType(StatusCodes.Status201Created)]
     public ActionResult<DtoOutputActu> Create(DtoInputCreateActu dto)
@@ -48,6 +50,7 @@ public class ActuController : ControllerBase
         );
     }
     
+    //execute use case _useCaseDeleteActu
     [HttpDelete]
     [Route("{id:int}")]
     [ProducesResponseType(StatusCodes.Status200OK)]
@@ -66,6 +69,8 @@ public class ActuController : ControllerBase
             });
         }
     }
+    
+    //execute use case _useCaseDeleteByIdActu
     [HttpDelete]
     [Route("id/{id:int}")]
     [ProducesResponseType(StatusCodes.Status200OK)]
@@ -85,6 +90,8 @@ public class ActuController : ControllerBase
         }
     }
     
+    
+    //execute use case _useCaseFetchActuById
     [HttpGet]
     [Route("{id:int}")]
     [ProducesResponseType(StatusCodes.Status200OK)]
@@ -94,6 +101,7 @@ public class ActuController : ControllerBase
         return Ok(_useCaseFetchActuById.Execute(id));
     }
     
+    //execute use case _useCaseUpdateActu
     [HttpPut]
     [ProducesResponseType(StatusCodes.Status204NoContent)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]

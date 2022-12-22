@@ -13,7 +13,8 @@ public class UseCaseFetchAllMovies : IUseCaseQuery<IEnumerable<DtoOutputMovie>>
     {
         _movieRepository = movieRepository;
     }
-
+    
+    //execute movie get all method
     public IEnumerable<DtoOutputMovie> Execute()
     {
         var dbMovie = _movieRepository.FetchAll();

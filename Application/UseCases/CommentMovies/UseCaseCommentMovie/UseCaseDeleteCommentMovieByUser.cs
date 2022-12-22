@@ -13,6 +13,7 @@ public class UseCaseDeleteCommentMovieByUser:  IUseCaseParameterizedQuery<DtoOut
         _commentMovieRepository = commentMovieRepository;
     }
 
+    //execute commentmovie delete  comment movie method by user
     public DtoOutputCommentMovie Execute(int id)
     {
         var dbCommentMovie = _commentMovieRepository.DeleteByUser(id);

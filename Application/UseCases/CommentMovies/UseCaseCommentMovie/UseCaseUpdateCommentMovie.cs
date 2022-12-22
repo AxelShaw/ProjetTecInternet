@@ -14,7 +14,8 @@ public class UseCaseUpdateCommentMovie : IUseCaseParameterizedQueryUpCommentMovi
     {
         _commentMovieRepository = commentMovieRepository;
     }
-
+    
+    //execute commentmovie update method 
     public bool Execute(DbCommentMovie CommentMovie)
     {
         var dbCommentMovie = _commentMovieRepository.Update(CommentMovie);

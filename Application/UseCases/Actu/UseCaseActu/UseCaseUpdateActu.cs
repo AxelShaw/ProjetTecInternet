@@ -14,7 +14,7 @@ public class UseCaseUpdateActu : IUseCaseParameterizedQueryUpActu<DtoOutputActu,
         _actuRepository = actuRepository;
     }
 
-
+    //execute news update method 
     public bool Execute(DbActu actu)
     {
         var dbActu = _actuRepository.Update(actu);

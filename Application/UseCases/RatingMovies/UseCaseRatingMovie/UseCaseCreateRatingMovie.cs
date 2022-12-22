@@ -13,7 +13,7 @@ public class UseCaseCreateRatingMovie : IUseCaseWriter<DtoOutputRatingMovie, Dto
         _ratingMovieRepository = ratingMovieRepository;
     }
     
-    
+    //execute create rating movie method
     public DtoOutputRatingMovie Execute(DtoInputCreateRatingMovie input)
     {
         var dbRatingMovie = _ratingMovieRepository.Create(input.Average_rating, input.NumVote, input.MovieRefId );

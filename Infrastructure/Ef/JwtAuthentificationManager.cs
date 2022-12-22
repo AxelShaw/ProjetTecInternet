@@ -25,10 +25,12 @@ public class JwtAuthentificationManager :  IJwtAuthentificationManager
 
     }
    
-    
+    //authentifcate a user to check if he is in database
     public DbUser Authenticate(string mail, string password)
     {
+        //set encryption method
         SHA256 sha256Hash = SHA256.Create();
+        //get hash of password
         var passwordHashVerif = HashedPassword.GetHash(sha256Hash, password);
             
         return Users.Where(u => u.mail.ToUpper().Equals(mail.ToUpper()) 
@@ -36,6 +38,7 @@ public class JwtAuthentificationManager :  IJwtAuthentificationManager
         
     }
     
+    //generate a token
     public string GenerateToken(string secret, List<Claim> claims)
     {
         var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(secret));

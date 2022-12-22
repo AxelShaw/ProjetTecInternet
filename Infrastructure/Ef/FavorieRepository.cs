@@ -14,19 +14,21 @@ public class FavorieRepository :IFavorieRepository
     }
 
 
+    //get all favorie
     public IEnumerable<DbFavorie> FetchAll()
     {
         using var context = _contextProvider.NewContext();
         return context.Favorie.ToList();
     }
 
+    //get a favori by id
     public IEnumerable<DbFavorie> FetchById(int id)
     {
         using var context = _contextProvider.NewContext();
         return context.Favorie.ToList().Where(g => g.IdUserRef == id);
     }
 
-
+    //create a favori 
     public DbFavorie Create(int IdMovieRef, int IdUserRef )
     {
         using var context = _contextProvider.NewContext();
@@ -40,6 +42,7 @@ public class FavorieRepository :IFavorieRepository
         return favorie;
     }
 
+    //delete a favori by movie
     public bool Delete(int id)
     {
         using var context = _contextProvider.NewContext();
@@ -54,6 +57,7 @@ public class FavorieRepository :IFavorieRepository
         }
     }
     
+    //delete a favori by user
     public bool DeleteByUser(int id)
     {
         using var context = _contextProvider.NewContext();
@@ -68,6 +72,7 @@ public class FavorieRepository :IFavorieRepository
         }
     }
 
+    //delete a favori by id
     public bool DeleteById(int id)
     {
         using var context = _contextProvider.NewContext();
@@ -82,6 +87,7 @@ public class FavorieRepository :IFavorieRepository
         }
     }
 
+    //update a favori 
     public bool Update(DbFavorie favorie)
     {
         using var context = _contextProvider.NewContext();

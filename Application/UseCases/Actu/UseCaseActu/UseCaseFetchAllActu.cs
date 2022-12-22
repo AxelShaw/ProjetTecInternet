@@ -13,6 +13,7 @@ public class UseCaseFetchAllActu : IUseCaseQuery<IEnumerable<DtoOutputActu>>
         _actuRepository = actuRepository;
     }
 
+    //execute news get all method
     public IEnumerable<DtoOutputActu> Execute()
     {
         var dbActu = _actuRepository.FetchAll();

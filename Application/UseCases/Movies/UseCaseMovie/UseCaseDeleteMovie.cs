@@ -14,6 +14,7 @@ public class UseCaseDeleteMovie: IUseCaseParameterizedQuery<DtoOutputMovie, int>
         _movieRepository = movieRepository;
     }
 
+    //execute movie delete method
     public DtoOutputMovie Execute(int id)
     {
         var dbMovie = _movieRepository.Delete(id);

@@ -13,6 +13,7 @@ public class UseCaseFetchMovieByName :IUseCaseParameterizedQuery<IEnumerable<Dto
         _movieRepository = movieRepository;
     }
 
+    //execute movie get by name method
     public IEnumerable<DtoOutputMovie> Execute(string name)
     {
         var dbMovie = _movieRepository.FetchByName(name);

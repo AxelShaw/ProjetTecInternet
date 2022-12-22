@@ -28,12 +28,13 @@ public class UserController : ControllerBase
         _useCaseFetchByNameUser = useCaseFetchByNameUser;
 
     }
-    
+    //execute use case _useCaseFetchAllUsers
     [HttpGet]
     public ActionResult<IEnumerable<DtoOutputUser>> FetchAll()
     {
         return Ok(_useCaseFetchAllUsers.Execute());
     }
+    //execute use case _useCaseFetchUserById
     [HttpGet]
     [Route("{id:int}")]
     [ProducesResponseType(StatusCodes.Status200OK)]
@@ -52,6 +53,7 @@ public class UserController : ControllerBase
             });
         }
     }
+    //execute use case _useCaseDeleteUser
     [HttpDelete]
     [Route("{id:int}")]
     [ProducesResponseType(StatusCodes.Status200OK)]
@@ -70,7 +72,7 @@ public class UserController : ControllerBase
             });
         }
     }
-    
+    //execute use case _useCaseCreateUser
     [HttpPost]
     [ProducesResponseType(StatusCodes.Status201Created)]
     public ActionResult<DtoOutputUser> Create(DtoInputCreateUser dto)
@@ -93,6 +95,7 @@ public class UserController : ControllerBase
         }
         
     }
+    //execute use case _useCaseUpdateUser
     [HttpPut]
     [ProducesResponseType(StatusCodes.Status204NoContent)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
@@ -100,6 +103,7 @@ public class UserController : ControllerBase
     {
         return _useCaseUpdateUser.Execute(user) ? NoContent() : NotFound();
     }
+    //execute use case
     [HttpGet]
     [Route("{nickname}")]
     [ProducesResponseType(StatusCodes.Status200OK)]

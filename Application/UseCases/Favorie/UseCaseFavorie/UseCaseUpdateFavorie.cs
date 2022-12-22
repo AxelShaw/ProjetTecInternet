@@ -13,7 +13,7 @@ public class UseCaseUpdateFavorie : IUseCaseParameterizedQueryUpFavorie<DtoOutpu
         _favorieRepositoryy = favorieRepository;
     }
 
-
+    //execute favori update method
     public bool Execute(DbFavorie favorie)
     {
         var dbFavorie = _favorieRepositoryy.Update(favorie);

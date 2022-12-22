@@ -30,7 +30,7 @@ public class MovieContext : DbContext
         if (!optionsBuilder.IsConfigured)
             optionsBuilder.UseSqlServer(_connectionStringProvider.Get("db"));
     }
-    
+    //data binding with database
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder.Entity<DbMovie>(entity =>
