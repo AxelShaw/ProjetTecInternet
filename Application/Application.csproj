@@ -20,6 +20,7 @@
       <Compile Remove="UseCases\Series\DtoInputCreateSerie.cs" />
       <Compile Remove="UseCases\Utlis\IUseCaseParameterizedQueryStr.cs" />
       <Compile Remove="UseCases\CommentMovies\Dtos\DtoOuputCommentMovie.cs" />
+      <Compile Remove="UseCases\Users\UseCaseUser\UseCaseIsPresentUser.cs" />
     </ItemGroup>
 
 </Project>

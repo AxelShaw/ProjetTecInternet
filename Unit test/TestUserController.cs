@@ -15,10 +15,12 @@ public class TestUserController
         
         
         UseCaseCreateUser _useCaseCreateUser=new UseCaseCreateUser(userRepository);
-//        UserController controller = new UserController(_useCaseCreateUser);
         DtoInputCreateUser input = new DtoInputCreateUser();
         DtoOutputUser output = new DtoOutputUser();
+        
         _useCaseCreateUser.Execute(input);
         Assert.Equals(output,input);
     }
+
+    
 }

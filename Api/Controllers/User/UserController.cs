@@ -15,12 +15,10 @@ public class UserController : ControllerBase
     private readonly UseCaseDeleteUser _useCaseDeleteUser;
     private readonly UseCaseUpdateUser _useCaseUpdateUser;
     private readonly UseCaseFetchByNameUser _useCaseFetchByNameUser;
-    private readonly UseCaseIsPresentUser _useCaseIsPresentUser;
 
     public UserController(UseCaseCreateUser useCaseCreateUser, UseCaseFetchAllUsers useCaseFetchAllUsers,
         UseCaseFetchUserById useCaseFetchUserById, UseCaseDeleteUser useCaseDeleteUser,
-        UseCaseUpdateUser useCaseUpdateUser, UseCaseFetchByNameUser useCaseFetchByNameUser, 
-        UseCaseIsPresentUser useCaseIsPresentUser)
+        UseCaseUpdateUser useCaseUpdateUser, UseCaseFetchByNameUser useCaseFetchByNameUser)
     {
         _useCaseCreateUser = useCaseCreateUser;
         _useCaseFetchAllUsers = useCaseFetchAllUsers;
@@ -28,7 +26,7 @@ public class UserController : ControllerBase
         _useCaseDeleteUser = useCaseDeleteUser;
         _useCaseUpdateUser = useCaseUpdateUser;
         _useCaseFetchByNameUser = useCaseFetchByNameUser;
-        _useCaseIsPresentUser = useCaseIsPresentUser;
+
     }
     
     [HttpGet]
@@ -109,13 +107,5 @@ public class UserController : ControllerBase
     public ActionResult<IEnumerable<DtoOutputUser>> FetchByName(string nickname)
     {
         return Ok(_useCaseFetchByNameUser.Execute(nickname));
-    }
-    [HttpGet]
-    [Route("mail/{mail}")]
-    [ProducesResponseType(StatusCodes.Status200OK)]
-    [ProducesResponseType(StatusCodes.Status404NotFound)]
-    public ActionResult<Boolean> IsPresentMail(string mail)
-    {
-        return _useCaseIsPresentUser.Execute(mail);
     }
 }

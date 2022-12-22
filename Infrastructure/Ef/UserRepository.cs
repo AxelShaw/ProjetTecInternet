@@ -1,4 +1,6 @@
-﻿using Infrastructure.Ef.DbEntities;
+﻿using System.Runtime.Intrinsics.Arm;
+using System.Security.Cryptography;
+using Infrastructure.Ef.DbEntities;
 using Infrastructure.Utils;
 using Microsoft.EntityFrameworkCore;
 
@@ -48,13 +50,16 @@ public class UserRepository : IUserRepository
             return null;
         }
         
+        SHA256 sha256Hash = SHA256.Create();
+        
+        var passwordHash = HashedPassword.GetHash(sha256Hash, password);
         var user = new DbUser
         {
             last_name = lastName,
             first_name = firstName,
             mail = mail,
             nickname = nickName,
-            password = password,
+            password = passwordHash.ToString(),
             role = role,
             profil_picture = profilePic,
         };
@@ -104,16 +109,5 @@ public class UserRepository : IUserRepository
             throw new KeyNotFoundException($"User with name {nickName} has not been found");
 
         return user;
-    }
-    public bool IsPresentMail(string mail)
-    {
-        using var context = _contextProvider.NewContext();
-
-        if (context.User.Any(g => g.mail.ToLower() == mail.ToLower()))
-        {
-            return true;
-        }
-
-        return false;
     }
 }

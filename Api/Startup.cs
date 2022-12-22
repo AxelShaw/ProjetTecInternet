@@ -126,7 +126,6 @@ namespace ProjetTi;
 
             services.AddScoped<UseCaseUpdateMovie>();
             services.AddScoped<UseCaseUpdateUser>();
-            services.AddScoped<UseCaseIsPresentUser>();
             services.AddScoped<UseCaseUpdateRatingMovie>();
             services.AddScoped<UseCaseUpdateCommentMovie>();
             services.AddScoped<UseCaseUpdateFavorie>();

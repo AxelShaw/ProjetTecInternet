@@ -1,0 +1,23 @@
+{
+  "Version": 1,
+  "Hash": "VkEvGNVRf/9VEuxfFLEbJUwmCYk4wvs/72EbvI7mVFg=",
+  "Source": "Unit test",
+  "BasePath": "_content/Unit test",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [
+    {
+      "Identity": "D:\\Ecole\\Bloc3\\ti4_sql\\projet\\projet_github\\ProjetTecInternetRider\\Api\\Api.csproj",
+      "Version": 2,
+      "Source": "Api",
+      "GetPublishAssetsTargets": "ComputeReferencedStaticWebAssetsPublishManifest;GetCurrentProjectPublishStaticWebAssetItems",
+      "AdditionalPublishProperties": "Configuration=Debug;Platform=AnyCPU",
+      "AdditionalPublishPropertiesToRemove": "WebPublishProfileFile;TargetFramework;RuntimeIdentifier",
+      "GetBuildAssetsTargets": "GetCurrentProjectBuildStaticWebAssetItems",
+      "AdditionalBuildProperties": "Configuration=Debug;Platform=AnyCPU",
+      "AdditionalBuildPropertiesToRemove": "WebPublishProfileFile;TargetFramework;RuntimeIdentifier"
+    }
+  ],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

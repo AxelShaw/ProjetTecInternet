@@ -1,5 +1,6 @@
 ﻿using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
+using System.Security.Cryptography;
 using System.Text;
 using Domain;
 using Infrastructure.Ef.DbEntities;
@@ -27,8 +28,11 @@ public class JwtAuthentificationManager :  IJwtAuthentificationManager
     
     public DbUser Authenticate(string mail, string password)
     {
+        SHA256 sha256Hash = SHA256.Create();
+        var passwordHashVerif = HashedPassword.GetHash(sha256Hash, password);
+            
         return Users.Where(u => u.mail.ToUpper().Equals(mail.ToUpper()) 
-                                && u.password.Equals(password)).FirstOrDefault();
+                                && u.password.Equals(passwordHashVerif.ToString())).FirstOrDefault();
         
     }
     

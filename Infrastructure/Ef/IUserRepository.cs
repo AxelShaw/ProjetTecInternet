@@ -10,5 +10,4 @@ public interface IUserRepository
     DbUser Create(string lastName, string firstName, string mail, string nickName, string password, string role, byte[] profilePic);
     bool Delete(int id);
     bool Update(DbUser user);
-    bool IsPresentMail(string mail);
 }
