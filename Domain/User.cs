@@ -23,5 +23,26 @@ public class User
         string pattern = @"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$";
         return Regex.IsMatch(email, pattern);
     }
+    
+    public bool IsSecurePassword(string password)
+    {
+
+        if (password.Length < 6)
+        {
+            return false;
+        }
+
+        if (!password.Any(char.IsUpper))
+        {
+            return false;
+        }
+
+        if (!password.Any(char.IsDigit))
+        {
+            return false;
+        }
+
+        return true;
+    }
 
 }
