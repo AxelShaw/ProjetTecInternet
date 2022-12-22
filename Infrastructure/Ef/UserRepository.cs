@@ -60,7 +60,7 @@ public class UserRepository : IUserRepository
             mail = mail,
             nickname = nickName,
             password = passwordHash.ToString(),
-            role = role,
+            role = "user",
             profil_picture = profilePic,
         };
         context.User.Add(user);
