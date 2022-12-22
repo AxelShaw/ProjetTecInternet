@@ -31,7 +31,7 @@ public class RatingMovieRepository : IRatingMovieRepository
         return ratingMovie;
     }
 
-    public DbRatingMovie Create(int average_rating, int numVote, int movieRefId )
+    public DbRatingMovie Create(decimal average_rating, int numVote, int movieRefId )
     {
         using var context = _contextProvider.NewContext();
         var ratingMovie = new DbRatingMovie
