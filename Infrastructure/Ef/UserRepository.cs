@@ -40,6 +40,14 @@ public class UserRepository : IUserRepository
         string role, byte[] profilePic)
     {
         using var context = _contextProvider.NewContext();
+
+        var allUser = context.User.ToList().Where(g => g.mail.ToLower().Contains(mail.ToLower()));
+
+        if (allUser.ToList().Count > 0)
+        {
+            return null;
+        }
+        
         var user = new DbUser
         {
             last_name = lastName,

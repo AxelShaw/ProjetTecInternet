@@ -163,7 +163,7 @@ namespace ProjetTi;
                 options.AllowCredentials();   
             });
 
-            app.UseHttpsRedirection();
+            if(!env.IsDevelopment())app.UseHttpsRedirection();
 
             app.UseRouting();
 

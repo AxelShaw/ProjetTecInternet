@@ -19,6 +19,7 @@ public class UseCaseCreateUser : IUseCaseWriter<DtoOutputUser, DtoInputCreateUse
     {
         var dbUser = _userRepository.Create(input.last_name, input.first_name, input.mail, input.nickname,
             input.password, input.role, input.profil_picture);
+
         return Mapper.GetInstance().Map<DtoOutputUser>(dbUser);
     }
 }

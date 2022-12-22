@@ -78,11 +78,22 @@ public class UserController : ControllerBase
     public ActionResult<DtoOutputUser> Create(DtoInputCreateUser dto)
     {
         var output = _useCaseCreateUser.Execute(dto);
-        return CreatedAtAction(
-            nameof(FetchById),
-            new { id = output.IdUser },
-            output
-        );
+        try
+        {
+            return CreatedAtAction(
+                nameof(FetchById),
+                new { id = output.IdUser },
+                output
+            );
+        }
+        catch (KeyNotFoundException e)
+        {
+            return NotFound(new
+            {
+                e.Message
+            });
+        }
+        
     }
     [HttpPut]
     [ProducesResponseType(StatusCodes.Status204NoContent)]
