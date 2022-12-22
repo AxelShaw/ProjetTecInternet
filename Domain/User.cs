@@ -1,4 +1,6 @@
-﻿namespace Domain;
+﻿using System.Text.RegularExpressions;
+
+namespace Domain;
 
 public class User
 {
@@ -15,5 +17,11 @@ public class User
     public string role { get; set; }
     
     public byte[] profil_picture { get; set; }
+
+    public bool IsValidEmail(string email)
+    {
+        string pattern = @"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$";
+        return Regex.IsMatch(email, pattern);
+    }
 
 }

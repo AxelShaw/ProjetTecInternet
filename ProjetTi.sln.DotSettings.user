@@ -5,5 +5,6 @@
       &lt;TestId&gt;NUnit3x::2C0E6308-4EF0-4E11-8A2C-254BCA58F64E::net6.0::Unit_test.TestUserController&lt;/TestId&gt;&#xD;
     &lt;/TestAncestor&gt;&#xD;
     &lt;ProjectFile&gt;2C0E6308-4EF0-4E11-8A2C-254BCA58F64E/f:TestRatingMovie.cs&lt;/ProjectFile&gt;&#xD;
+    &lt;ProjectFile&gt;2C0E6308-4EF0-4E11-8A2C-254BCA58F64E/f:TestUserMail.cs&lt;/ProjectFile&gt;&#xD;
   &lt;/Or&gt;&#xD;
 &lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>
