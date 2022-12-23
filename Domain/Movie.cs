@@ -22,5 +22,17 @@ public class Movie
     
     public string Release_movie { get; set; }
     
+    public void PositiveRuntime(int movieRuntimeMinute)
+    {
+        if (RuntimeMinute < 0)
+        {
+            RuntimeMinute = 0;
+        }
+        else
+        {
+            RuntimeMinute = movieRuntimeMinute;
+        }
+    }
+    
 
 }   
