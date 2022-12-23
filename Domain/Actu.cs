@@ -10,6 +10,7 @@ public class Actu
     public string NewsActu { get; set; }
     public string Release_actu { get; set; }
 
+    //Method to check if the date format is correct
     public bool IsValidateDate(string releaseDate)
     {
         /*bool pattern  = DateTime.TryParseExact(actu.Release_actu, "MM/dd/yyyy",

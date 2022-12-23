@@ -14,11 +14,7 @@ public class UserRepository : IUserRepository
     {
         _contextProvider = contextProvider;
     }
-
-    public UserRepository()
-    {
-        throw new NotImplementedException();
-    }
+    
 
     //get all user
     public IEnumerable<DbUser> FetchAll()

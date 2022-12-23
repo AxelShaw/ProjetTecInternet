@@ -49,6 +49,7 @@ namespace ProjetTi;
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "JwtApi", Version = "v1" });
             });
 
+            //Authentification with JWT Token
             services.AddAuthentication(options =>
             {
                 options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;

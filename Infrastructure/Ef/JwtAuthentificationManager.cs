@@ -17,6 +17,7 @@ public class JwtAuthentificationManager :  IJwtAuthentificationManager
     private readonly IEnumerable<DbUser> Users = new List<DbUser>();
 
 
+    //connection to our database
     public JwtAuthentificationManager(IUserRepository user, IConfiguration config)
     {
         _users = user;

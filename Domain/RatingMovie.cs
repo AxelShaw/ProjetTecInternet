@@ -9,6 +9,7 @@ public class RatingMovie
 
     public int MovieRefId{ get; set; }
     
+    //Method to check if the average rating is correct
     public void AverageRating(int i)
     {
         if (Average_rating!=0)

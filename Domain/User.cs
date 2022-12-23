@@ -24,19 +24,20 @@ public class User
         return Regex.IsMatch(email, pattern);
     }
     
+    //Method to check if the password is secure
     public bool IsSecurePassword(string password)
     {
-
-        if (password.Length < 6)
+        //check that the password has at least 8 characters
+        if (password.Length < 8)
         {
             return false;
         }
-
+        //check that the password has at least 1 uppercase letter
         if (!password.Any(char.IsUpper))
         {
             return false;
         }
-
+        //check that the password has at least 1 digit
         if (!password.Any(char.IsDigit))
         {
             return false;

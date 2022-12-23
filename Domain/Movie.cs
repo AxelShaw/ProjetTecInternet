@@ -22,6 +22,7 @@ public class Movie
     
     public string Release_movie { get; set; }
     
+    //Method to check if the duration of a film is correct
     public void PositiveRuntime(int movieRuntimeMinute)
     {
         if (RuntimeMinute < 0)
