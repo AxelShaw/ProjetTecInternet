@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\maadi\\Desktop\\Bloc 3\\Technologie Internet\\Rider\\Projet(Partie Back-end)\\ProjetTecInternetRider\\Unit test\\Unit test.csproj": {}
+    "D:\\Ecole\\Bloc3\\ti4_sql\\projet\\projet_github\\ProjetTecInternetRider\\Unit test\\Unit test.csproj": {}
   },
   "projects": {
-    "C:\\Users\\maadi\\Desktop\\Bloc 3\\Technologie Internet\\Rider\\Projet(Partie Back-end)\\ProjetTecInternetRider\\Api\\Api.csproj": {
+    "D:\\Ecole\\Bloc3\\ti4_sql\\projet\\projet_github\\ProjetTecInternetRider\\Api\\Api.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\maadi\\Desktop\\Bloc 3\\Technologie Internet\\Rider\\Projet(Partie Back-end)\\ProjetTecInternetRider\\Api\\Api.csproj",
+        "projectUniqueName": "D:\\Ecole\\Bloc3\\ti4_sql\\projet\\projet_github\\ProjetTecInternetRider\\Api\\Api.csproj",
         "projectName": "Api",
-        "projectPath": "C:\\Users\\maadi\\Desktop\\Bloc 3\\Technologie Internet\\Rider\\Projet(Partie Back-end)\\ProjetTecInternetRider\\Api\\Api.csproj",
-        "packagesPath": "C:\\Users\\maadi\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\maadi\\Desktop\\Bloc 3\\Technologie Internet\\Rider\\Projet(Partie Back-end)\\ProjetTecInternetRider\\Api\\obj\\",
+        "projectPath": "D:\\Ecole\\Bloc3\\ti4_sql\\projet\\projet_github\\ProjetTecInternetRider\\Api\\Api.csproj",
+        "packagesPath": "C:\\Users\\lucas\\.nuget\\packages\\",
+        "outputPath": "D:\\Ecole\\Bloc3\\ti4_sql\\projet\\projet_github\\ProjetTecInternetRider\\Api\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\maadi\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\lucas\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -28,11 +28,11 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\maadi\\Desktop\\Bloc 3\\Technologie Internet\\Rider\\Projet(Partie Back-end)\\ProjetTecInternetRider\\Application\\Application.csproj": {
-                "projectPath": "C:\\Users\\maadi\\Desktop\\Bloc 3\\Technologie Internet\\Rider\\Projet(Partie Back-end)\\ProjetTecInternetRider\\Application\\Application.csproj"
+              "D:\\Ecole\\Bloc3\\ti4_sql\\projet\\projet_github\\ProjetTecInternetRider\\Application\\Application.csproj": {
+                "projectPath": "D:\\Ecole\\Bloc3\\ti4_sql\\projet\\projet_github\\ProjetTecInternetRider\\Application\\Application.csproj"
               },
-              "C:\\Users\\maadi\\Desktop\\Bloc 3\\Technologie Internet\\Rider\\Projet(Partie Back-end)\\ProjetTecInternetRider\\Infrastructure\\Infrastructure.csproj": {
-                "projectPath": "C:\\Users\\maadi\\Desktop\\Bloc 3\\Technologie Internet\\Rider\\Projet(Partie Back-end)\\ProjetTecInternetRider\\Infrastructure\\Infrastructure.csproj"
+              "D:\\Ecole\\Bloc3\\ti4_sql\\projet\\projet_github\\ProjetTecInternetRider\\Infrastructure\\Infrastructure.csproj": {
+                "projectPath": "D:\\Ecole\\Bloc3\\ti4_sql\\projet\\projet_github\\ProjetTecInternetRider\\Infrastructure\\Infrastructure.csproj"
               }
             }
           }
@@ -83,17 +83,17 @@
         }
       }
     },
-    "C:\\Users\\maadi\\Desktop\\Bloc 3\\Technologie Internet\\Rider\\Projet(Partie Back-end)\\ProjetTecInternetRider\\Application\\Application.csproj": {
+    "D:\\Ecole\\Bloc3\\ti4_sql\\projet\\projet_github\\ProjetTecInternetRider\\Application\\Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\maadi\\Desktop\\Bloc 3\\Technologie Internet\\Rider\\Projet(Partie Back-end)\\ProjetTecInternetRider\\Application\\Application.csproj",
+        "projectUniqueName": "D:\\Ecole\\Bloc3\\ti4_sql\\projet\\projet_github\\ProjetTecInternetRider\\Application\\Application.csproj",
         "projectName": "Application",
-        "projectPath": "C:\\Users\\maadi\\Desktop\\Bloc 3\\Technologie Internet\\Rider\\Projet(Partie Back-end)\\ProjetTecInternetRider\\Application\\Application.csproj",
-        "packagesPath": "C:\\Users\\maadi\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\maadi\\Desktop\\Bloc 3\\Technologie Internet\\Rider\\Projet(Partie Back-end)\\ProjetTecInternetRider\\Application\\obj\\",
+        "projectPath": "D:\\Ecole\\Bloc3\\ti4_sql\\projet\\projet_github\\ProjetTecInternetRider\\Application\\Application.csproj",
+        "packagesPath": "C:\\Users\\lucas\\.nuget\\packages\\",
+        "outputPath": "D:\\Ecole\\Bloc3\\ti4_sql\\projet\\projet_github\\ProjetTecInternetRider\\Application\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\maadi\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\lucas\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -107,8 +107,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\maadi\\Desktop\\Bloc 3\\Technologie Internet\\Rider\\Projet(Partie Back-end)\\ProjetTecInternetRider\\Infrastructure\\Infrastructure.csproj": {
-                "projectPath": "C:\\Users\\maadi\\Desktop\\Bloc 3\\Technologie Internet\\Rider\\Projet(Partie Back-end)\\ProjetTecInternetRider\\Infrastructure\\Infrastructure.csproj"
+              "D:\\Ecole\\Bloc3\\ti4_sql\\projet\\projet_github\\ProjetTecInternetRider\\Infrastructure\\Infrastructure.csproj": {
+                "projectPath": "D:\\Ecole\\Bloc3\\ti4_sql\\projet\\projet_github\\ProjetTecInternetRider\\Infrastructure\\Infrastructure.csproj"
               }
             }
           }
@@ -152,17 +152,17 @@
         }
       }
     },
-    "C:\\Users\\maadi\\Desktop\\Bloc 3\\Technologie Internet\\Rider\\Projet(Partie Back-end)\\ProjetTecInternetRider\\Domain\\Domain.csproj": {
+    "D:\\Ecole\\Bloc3\\ti4_sql\\projet\\projet_github\\ProjetTecInternetRider\\Domain\\Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\maadi\\Desktop\\Bloc 3\\Technologie Internet\\Rider\\Projet(Partie Back-end)\\ProjetTecInternetRider\\Domain\\Domain.csproj",
+        "projectUniqueName": "D:\\Ecole\\Bloc3\\ti4_sql\\projet\\projet_github\\ProjetTecInternetRider\\Domain\\Domain.csproj",
         "projectName": "Domain",
-        "projectPath": "C:\\Users\\maadi\\Desktop\\Bloc 3\\Technologie Internet\\Rider\\Projet(Partie Back-end)\\ProjetTecInternetRider\\Domain\\Domain.csproj",
-        "packagesPath": "C:\\Users\\maadi\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\maadi\\Desktop\\Bloc 3\\Technologie Internet\\Rider\\Projet(Partie Back-end)\\ProjetTecInternetRider\\Domain\\obj\\",
+        "projectPath": "D:\\Ecole\\Bloc3\\ti4_sql\\projet\\projet_github\\ProjetTecInternetRider\\Domain\\Domain.csproj",
+        "packagesPath": "C:\\Users\\lucas\\.nuget\\packages\\",
+        "outputPath": "D:\\Ecole\\Bloc3\\ti4_sql\\projet\\projet_github\\ProjetTecInternetRider\\Domain\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\maadi\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\lucas\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -207,17 +207,17 @@
         }
       }
     },
-    "C:\\Users\\maadi\\Desktop\\Bloc 3\\Technologie Internet\\Rider\\Projet(Partie Back-end)\\ProjetTecInternetRider\\Infrastructure\\Infrastructure.csproj": {
+    "D:\\Ecole\\Bloc3\\ti4_sql\\projet\\projet_github\\ProjetTecInternetRider\\Infrastructure\\Infrastructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\maadi\\Desktop\\Bloc 3\\Technologie Internet\\Rider\\Projet(Partie Back-end)\\ProjetTecInternetRider\\Infrastructure\\Infrastructure.csproj",
+        "projectUniqueName": "D:\\Ecole\\Bloc3\\ti4_sql\\projet\\projet_github\\ProjetTecInternetRider\\Infrastructure\\Infrastructure.csproj",
         "projectName": "Infrastructure",
-        "projectPath": "C:\\Users\\maadi\\Desktop\\Bloc 3\\Technologie Internet\\Rider\\Projet(Partie Back-end)\\ProjetTecInternetRider\\Infrastructure\\Infrastructure.csproj",
-        "packagesPath": "C:\\Users\\maadi\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\maadi\\Desktop\\Bloc 3\\Technologie Internet\\Rider\\Projet(Partie Back-end)\\ProjetTecInternetRider\\Infrastructure\\obj\\",
+        "projectPath": "D:\\Ecole\\Bloc3\\ti4_sql\\projet\\projet_github\\ProjetTecInternetRider\\Infrastructure\\Infrastructure.csproj",
+        "packagesPath": "C:\\Users\\lucas\\.nuget\\packages\\",
+        "outputPath": "D:\\Ecole\\Bloc3\\ti4_sql\\projet\\projet_github\\ProjetTecInternetRider\\Infrastructure\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\maadi\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\lucas\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -231,8 +231,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\maadi\\Desktop\\Bloc 3\\Technologie Internet\\Rider\\Projet(Partie Back-end)\\ProjetTecInternetRider\\Domain\\Domain.csproj": {
-                "projectPath": "C:\\Users\\maadi\\Desktop\\Bloc 3\\Technologie Internet\\Rider\\Projet(Partie Back-end)\\ProjetTecInternetRider\\Domain\\Domain.csproj"
+              "D:\\Ecole\\Bloc3\\ti4_sql\\projet\\projet_github\\ProjetTecInternetRider\\Domain\\Domain.csproj": {
+                "projectPath": "D:\\Ecole\\Bloc3\\ti4_sql\\projet\\projet_github\\ProjetTecInternetRider\\Domain\\Domain.csproj"
               }
             }
           }
@@ -272,17 +272,17 @@
         }
       }
     },
-    "C:\\Users\\maadi\\Desktop\\Bloc 3\\Technologie Internet\\Rider\\Projet(Partie Back-end)\\ProjetTecInternetRider\\Unit test\\Unit test.csproj": {
+    "D:\\Ecole\\Bloc3\\ti4_sql\\projet\\projet_github\\ProjetTecInternetRider\\Unit test\\Unit test.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\maadi\\Desktop\\Bloc 3\\Technologie Internet\\Rider\\Projet(Partie Back-end)\\ProjetTecInternetRider\\Unit test\\Unit test.csproj",
+        "projectUniqueName": "D:\\Ecole\\Bloc3\\ti4_sql\\projet\\projet_github\\ProjetTecInternetRider\\Unit test\\Unit test.csproj",
         "projectName": "Unit test",
-        "projectPath": "C:\\Users\\maadi\\Desktop\\Bloc 3\\Technologie Internet\\Rider\\Projet(Partie Back-end)\\ProjetTecInternetRider\\Unit test\\Unit test.csproj",
-        "packagesPath": "C:\\Users\\maadi\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\maadi\\Desktop\\Bloc 3\\Technologie Internet\\Rider\\Projet(Partie Back-end)\\ProjetTecInternetRider\\Unit test\\obj\\",
+        "projectPath": "D:\\Ecole\\Bloc3\\ti4_sql\\projet\\projet_github\\ProjetTecInternetRider\\Unit test\\Unit test.csproj",
+        "packagesPath": "C:\\Users\\lucas\\.nuget\\packages\\",
+        "outputPath": "D:\\Ecole\\Bloc3\\ti4_sql\\projet\\projet_github\\ProjetTecInternetRider\\Unit test\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\maadi\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\lucas\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -296,14 +296,14 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\maadi\\Desktop\\Bloc 3\\Technologie Internet\\Rider\\Projet(Partie Back-end)\\ProjetTecInternetRider\\Api\\Api.csproj": {
-                "projectPath": "C:\\Users\\maadi\\Desktop\\Bloc 3\\Technologie Internet\\Rider\\Projet(Partie Back-end)\\ProjetTecInternetRider\\Api\\Api.csproj"
+              "D:\\Ecole\\Bloc3\\ti4_sql\\projet\\projet_github\\ProjetTecInternetRider\\Api\\Api.csproj": {
+                "projectPath": "D:\\Ecole\\Bloc3\\ti4_sql\\projet\\projet_github\\ProjetTecInternetRider\\Api\\Api.csproj"
               },
-              "C:\\Users\\maadi\\Desktop\\Bloc 3\\Technologie Internet\\Rider\\Projet(Partie Back-end)\\ProjetTecInternetRider\\Application\\Application.csproj": {
-                "projectPath": "C:\\Users\\maadi\\Desktop\\Bloc 3\\Technologie Internet\\Rider\\Projet(Partie Back-end)\\ProjetTecInternetRider\\Application\\Application.csproj"
+              "D:\\Ecole\\Bloc3\\ti4_sql\\projet\\projet_github\\ProjetTecInternetRider\\Application\\Application.csproj": {
+                "projectPath": "D:\\Ecole\\Bloc3\\ti4_sql\\projet\\projet_github\\ProjetTecInternetRider\\Application\\Application.csproj"
               },
-              "C:\\Users\\maadi\\Desktop\\Bloc 3\\Technologie Internet\\Rider\\Projet(Partie Back-end)\\ProjetTecInternetRider\\Infrastructure\\Infrastructure.csproj": {
-                "projectPath": "C:\\Users\\maadi\\Desktop\\Bloc 3\\Technologie Internet\\Rider\\Projet(Partie Back-end)\\ProjetTecInternetRider\\Infrastructure\\Infrastructure.csproj"
+              "D:\\Ecole\\Bloc3\\ti4_sql\\projet\\projet_github\\ProjetTecInternetRider\\Infrastructure\\Infrastructure.csproj": {
+                "projectPath": "D:\\Ecole\\Bloc3\\ti4_sql\\projet\\projet_github\\ProjetTecInternetRider\\Infrastructure\\Infrastructure.csproj"
               }
             }
           }
