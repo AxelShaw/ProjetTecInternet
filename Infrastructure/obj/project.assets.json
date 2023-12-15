@@ -3239,19 +3239,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\maadi\\.nuget\\packages\\": {}
+    "C:\\Users\\shaw\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\maadi\\Desktop\\Bloc 3\\Technologie Internet\\Rider\\Projet(Partie Back-end)\\ProjetTecInternetRider\\Infrastructure\\Infrastructure.csproj",
+      "projectUniqueName": "C:\\Users\\shaw\\Desktop\\2022-2023\\Prijet TecInt\\Groupe5-ProjetTi\\rider\\ProjetTecInternetRider\\Infrastructure\\Infrastructure.csproj",
       "projectName": "Infrastructure",
-      "projectPath": "C:\\Users\\maadi\\Desktop\\Bloc 3\\Technologie Internet\\Rider\\Projet(Partie Back-end)\\ProjetTecInternetRider\\Infrastructure\\Infrastructure.csproj",
-      "packagesPath": "C:\\Users\\maadi\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\maadi\\Desktop\\Bloc 3\\Technologie Internet\\Rider\\Projet(Partie Back-end)\\ProjetTecInternetRider\\Infrastructure\\obj\\",
+      "projectPath": "C:\\Users\\shaw\\Desktop\\2022-2023\\Prijet TecInt\\Groupe5-ProjetTi\\rider\\ProjetTecInternetRider\\Infrastructure\\Infrastructure.csproj",
+      "packagesPath": "C:\\Users\\shaw\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\shaw\\Desktop\\2022-2023\\Prijet TecInt\\Groupe5-ProjetTi\\rider\\ProjetTecInternetRider\\Infrastructure\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\maadi\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\shaw\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -3265,8 +3265,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\maadi\\Desktop\\Bloc 3\\Technologie Internet\\Rider\\Projet(Partie Back-end)\\ProjetTecInternetRider\\Domain\\Domain.csproj": {
-              "projectPath": "C:\\Users\\maadi\\Desktop\\Bloc 3\\Technologie Internet\\Rider\\Projet(Partie Back-end)\\ProjetTecInternetRider\\Domain\\Domain.csproj"
+            "C:\\Users\\shaw\\Desktop\\2022-2023\\Prijet TecInt\\Groupe5-ProjetTi\\rider\\ProjetTecInternetRider\\Domain\\Domain.csproj": {
+              "projectPath": "C:\\Users\\shaw\\Desktop\\2022-2023\\Prijet TecInt\\Groupe5-ProjetTi\\rider\\ProjetTecInternetRider\\Domain\\Domain.csproj"
             }
           }
         }
@@ -3302,7 +3302,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.401\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.403\\RuntimeIdentifierGraph.json"
       }
     }
   }

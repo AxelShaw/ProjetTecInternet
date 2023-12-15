@@ -1,4 +1,5 @@
-﻿using System.Security.Claims;
+﻿using System.IdentityModel.Tokens.Jwt;
+using System.Security.Claims;
 using Application.UseCases.Users.Dtos;
 using Infrastructure.Ef;
 using Microsoft.AspNetCore.Mvc;
@@ -45,4 +46,28 @@ public class LoginController : ControllerBase
         
         return Unauthorized();
     }
+    
+    [HttpGet]
+    public IActionResult GetUserInfo([FromQuery] string token)
+    {
+        if (string.IsNullOrEmpty(token))
+        {
+            return BadRequest("Token is missing");
+        }
+
+        var tokenHandler = new JwtSecurityTokenHandler();
+        var jwtSecurityToken = tokenHandler.ReadJwtToken(token);
+
+        var userId = jwtSecurityToken.Claims.FirstOrDefault(claim => claim.Type == "id")?.Value;
+        var userRole = jwtSecurityToken.Claims.FirstOrDefault(claim => claim.Type == "Role")?.Value;
+
+        if (userId == null || userRole == null)
+        {
+            return BadRequest("Invalid token");
+        }
+
+        var userInfo = new { UserId = userId, UserRole = userRole };
+        return Ok(userInfo);
+    }
+
 }

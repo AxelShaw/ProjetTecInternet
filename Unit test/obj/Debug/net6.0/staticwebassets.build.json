@@ -1,13 +1,13 @@
 {
   "Version": 1,
-  "Hash": "RvyNb34kGvbIhJtVthVmTSY9+I/QkrPycq0WkiPFaiU=",
+  "Hash": "ckWgjoawRjWpKfi+ZUOrHyQaIr0f4/wUb27vopLJISc=",
   "Source": "Unit test",
   "BasePath": "_content/Unit test",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [
     {
-      "Identity": "C:\\Users\\maadi\\Desktop\\Bloc 3\\Technologie Internet\\Rider\\Projet(Partie Back-end)\\ProjetTecInternetRider\\Api\\Api.csproj",
+      "Identity": "C:\\Users\\shaw\\Desktop\\Groupe5-ProjetTi\\rider\\ProjetTecInternetRider\\Api\\Api.csproj",
       "Version": 2,
       "Source": "Api",
       "GetPublishAssetsTargets": "ComputeReferencedStaticWebAssetsPublishManifest;GetCurrentProjectPublishStaticWebAssetItems",
