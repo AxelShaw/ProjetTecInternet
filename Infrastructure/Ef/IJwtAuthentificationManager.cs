@@ -8,6 +8,8 @@ namespace Infrastructure.Ef;
 public interface IJwtAuthentificationManager
 {
     DbUser Authenticate (string mail, string password);
+    
+    DbUser AuthenticateGoogle (string mail);
 
     string GenerateToken(string secret, List<Claim> claims);
 }

@@ -46,7 +46,7 @@ public class LoginController : ControllerBase
         
         return Unauthorized();
     }
-    
+
     [HttpGet]
     public IActionResult GetUserInfo([FromQuery] string token)
     {

@@ -39,6 +39,12 @@ public class JwtAuthentificationManager :  IJwtAuthentificationManager
         
     }
     
+    public DbUser AuthenticateGoogle(string mail)
+    {
+        return Users.Where(u => u.mail.ToUpper().Equals(mail.ToUpper())).FirstOrDefault();
+        
+    }
+    
     //generate a token
     public string GenerateToken(string secret, List<Claim> claims)
     {
