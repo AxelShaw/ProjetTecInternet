@@ -3366,19 +3366,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\shaw\\.nuget\\packages\\": {}
+    "C:\\Users\\lucas\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\shaw\\Desktop\\2022-2023\\Prijet TecInt\\Groupe5-ProjetTi\\rider\\ProjetTecInternetRider\\Application\\Application.csproj",
+      "projectUniqueName": "D:\\Ecole\\Bloc3\\ti4_sql\\projet\\projet_github\\ProjetTecInternetRider\\Application\\Application.csproj",
       "projectName": "Application",
-      "projectPath": "C:\\Users\\shaw\\Desktop\\2022-2023\\Prijet TecInt\\Groupe5-ProjetTi\\rider\\ProjetTecInternetRider\\Application\\Application.csproj",
-      "packagesPath": "C:\\Users\\shaw\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\shaw\\Desktop\\2022-2023\\Prijet TecInt\\Groupe5-ProjetTi\\rider\\ProjetTecInternetRider\\Application\\obj\\",
+      "projectPath": "D:\\Ecole\\Bloc3\\ti4_sql\\projet\\projet_github\\ProjetTecInternetRider\\Application\\Application.csproj",
+      "packagesPath": "C:\\Users\\lucas\\.nuget\\packages\\",
+      "outputPath": "D:\\Ecole\\Bloc3\\ti4_sql\\projet\\projet_github\\ProjetTecInternetRider\\Application\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\shaw\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\lucas\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -3392,8 +3392,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\shaw\\Desktop\\2022-2023\\Prijet TecInt\\Groupe5-ProjetTi\\rider\\ProjetTecInternetRider\\Infrastructure\\Infrastructure.csproj": {
-              "projectPath": "C:\\Users\\shaw\\Desktop\\2022-2023\\Prijet TecInt\\Groupe5-ProjetTi\\rider\\ProjetTecInternetRider\\Infrastructure\\Infrastructure.csproj"
+            "D:\\Ecole\\Bloc3\\ti4_sql\\projet\\projet_github\\ProjetTecInternetRider\\Infrastructure\\Infrastructure.csproj": {
+              "projectPath": "D:\\Ecole\\Bloc3\\ti4_sql\\projet\\projet_github\\ProjetTecInternetRider\\Infrastructure\\Infrastructure.csproj"
             }
           }
         }
@@ -3433,7 +3433,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.403\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.401\\RuntimeIdentifierGraph.json"
       }
     }
   }
